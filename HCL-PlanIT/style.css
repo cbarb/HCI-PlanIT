@@ -1,55 +1,51 @@
 
-/* Add a black background color to the top navigation */
 .topnav {
-    background-color: white;
-    overflow: hidden;
+        background-color: white;
+        overflow: hidden;
     
     
   }
   
-  /* Style the links inside the navigation bar */
   .topnav a {
-    display: flex;
-    align-items: center;
-    float: right;
-    display: block;
-    color: #002350;
-    text-align: center;
-    padding: 20px 20px;
-    text-decoration: none;
-    font-size: 17px;
-    font-family: Helvetica;
-    border-bottom: 3px solid transparent;
+        display: flex;
+        align-items: center;
+        float: right;
+        display: block;
+        color: #002350;
+        text-align: center;
+        padding: 20px 20px;
+        text-decoration: none;
+        font-size: 17px;
+        font-family: Helvetica;
+        border-bottom: 3px solid transparent;
     
   }
   
-  /* Change the color of links on hover */
   .topnav a:hover {
-    border-bottom: 3px solid #ECAD36;
+        border-bottom: 3px solid #ECAD36;
   }
   
-  /* Add a color to the active/current link */
   .topnav a.active {
-    border-bottom: 3px solid #ECAD36;
+        border-bottom: 3px solid #ECAD36;
     
   }
 
    .topnav a.login {
-       background-color: #ECAD36;
-       color: #002350;
-       border-bottom: #ECAD36;
+        background-color: #ECAD36;
+        color: #002350;
+        border-bottom: #ECAD36;
        
    }
 
    .topnav a.login:hover{
-    background-color: #002350;
-    color: #ECAD36;
-    border-bottom: #002350;
+        background-color: #002350;
+        color: #ECAD36;
+        border-bottom: #002350;
    }
 
    .background {
         position: absolute;
-        background-image: url("spaceBackground.png");
+        background-image: url("images/spaceBackground.png");
         background-size: contain;
         background-repeat: no-repeat;
         width: 100%;
