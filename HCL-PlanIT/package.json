@@ -1,0 +1,14 @@
+{
+  "name": "hcl-planit",
+  "version": "1.0.0",
+  "description": "Event planner for FIU students",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^4.0.4"
+  }
+}
