@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+     <head>
+          <meta charset="utf-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+          <link rel="stylesheet" type="text/css" href="content_style.css">
+          <title>PlanIT</title>
+     </head>
+     <body onload="calendarActiveOnLoad()">
+          <!--Vertical Navigation Bar-->
+          <div class="nav-bar">
+               <button onclick="changeTabContent(event, 'notifications')" class="nav-button">Notificiations</button>
+               <button onclick="changeTabContent(event, 'planner')" class="nav-button">Planner</button>
+               <button onclick="changeTabContent(event, 'calendar')" class="nav-button" id="calendarBtn">Calendar</button>
+               <button onclick="changeTabContent(event, 'messages')" class="nav-button">Messages</button>
+               <button onclick="changeTabContent(event, 'settings')" class="nav-button">Settings</button>
+          </div>
+
+          <!--Content for each navigation button-->
+          <div id="notifications" class="app-content">
+               <p>Notifications content</p>
+          </div>
+          <div id="planner" class="app-content">
+               <p>Planner content</p>
+          </div>
+          <div id="calendar" class="app-content">
+               <p>Calendar Content</p>
+          </div>
+          <div id="messages" class="app-content">
+               <p>Messages Content</p>
+          </div>
+          <div id="settings" class="app-content">
+               <p>Settings</p>
+          </div>
+
+          <!---->
+          <script src="main.js">
+               /*Sets the Calendar tab active and displays its content on load*/
+               function calendarActiveOnLoad() {
+                    var i, appContent, navButton;
+                    appContent = document.getElementsByClassName("app-content");
+                    for (i = 0; i < appContent.length; i++) {
+                         appContent[i].style.display = "none";
+                    }
+                    document.getElementById('calendar').style.display = "block";
+                    document.getElementById('calendarBtn').focus();
+               }
+               /*Switches between page content depending on the button selected.
+               https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_tabs*/
+               function changeTabContent(evt, navButtonName) {
+                    var i, appContent, navButton;
+                    appContent = document.getElementsByClassName("app-content");
+                    navButton = document.getElementsByClassName("nav-button");
+                    for (i = 0; i < appContent.length; i++) {
+                         appContent[i].style.display = "none";
+                    }
+
+                    for (i = 0; i < navButton.length; i++) {
+                         navButton[i].className = navButton[i].className.replace(" active", "");
+                    }
+                    document.getElementById(navButtonName).style.display = "block";
+                    evt.currentTarget.className += " active";
+               }
+          </script>
+     </body>
+
+</html>
