@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
         integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="main.js"></script>
     <title>PlanIT</title>
 </head>
 
@@ -33,7 +34,10 @@
                         <input type="password" class="form-control" placeholder="Password">
                         <i class="fas fa-lock"></i>
                     </div>
-                    <button type="submit" class="login-btn col-12">Login</button>
+                    <button type="submit" class="login-btn col-12" onclick="window.open('main_content.html', '_dir')">Login</button>
+
+                    <!-- Used for frameless window mode
+                    <button class="login-btn col-12" id="closeBtn" onclick="">Close</button>-->
                 </form>
                 <div class="col-12 forgot">
                     <a href="#">Forgot Password?</a>
