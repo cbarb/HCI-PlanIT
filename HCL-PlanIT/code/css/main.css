@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700');
+@import 'http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css';
+
+body, html {
+    height: calc(100% - 2em);
+    margin: 0;
+    font-family: 'Montserrat';
+}
+
+body {
+    background: #002350;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+aside {
+    color: #fff;
+    display: grid;
+    grid-template-columns: auto 40px;
+    padding: 2em;
+}
+
+img {
+    width: 40px;
+    cursor: pointer;
+}
+
+figure {
+    margin: 0;
+}
+
+figcaption {
+    font-size: 1.3em;
+    font-weight: bold;
+}
+
+nav {
+    background: #fff;
+}
+
+.active {
+    position: absolute;
+    display: block;
+    background: #fff;
+    width: 50%;
+    left: 0;
+    top: 0;
+    height: 100%;
+}
+
+ul {
+    display: none;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+ul li a {
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: .8em;
+    display: block;
+    padding: 1.5em 3em;
+    background-color: rgba(255,255,255,.35);
+    color: #000;
+}
+
+main {
+    background: #fff;
+    padding: 1em 1.4em;
+}
+
+
+p {
+    font-size: 1.1em;
+    line-height: 1.5em;
+}
+
+
+@media only screen and (min-width: 768px) {
+
+    body {
+        display: grid;
+        grid-template-columns: 20% auto;
+        padding: 2em;
+    }
+
+    img {
+        display: none;
+    }
+
+    aside {
+        background: #DCE1F6;
+        grid-template-columns: auto;
+        grid-template-rows: 20% auto;
+        padding: 0;
+    }
+
+    main {
+        padding: 4em;
+        background: white;
+        background-size: 70%;
+    }
+
+    #logo{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 40px;
+        margin-bottom: 20px;
+        width: 60%;
+    }
+
+    ul {
+        display: block;
+        margin-top: 2em;
+        position: relative !important;
+        background: none !important;
+        width: 100% !important;
+    }
+
+    ul li a:hover {
+        background-color: #fff;
+    }
+
+    nav {
+        background: none;
+    }
+
+    p {
+        font-size: 1.5em;
+    }
+
+    nav ul li a{
+        text-decoration: none;    
+        text-align: center; 
+        display: block;
+        transition: 0.3s;
+   }
+   nav ul li a .icon{
+        width: 50px;
+        height: 50px;
+        padding: 0;
+        overflow: hidden;    
+        font-size: 50px;
+        color: #002350;
+        display: inline-block;
+        text-align: center;
+        transition: 0.3s;
+   }
+   
+   nav ul li a .name{
+        font-size: 15px;
+        text-align: center;
+        color: #002350;
+        transition: 0.3s;
+        font-weight: bold;
+        transform: translateY(5px);
+   
+   }
+   nav ul li a:hover {
+        background: #002350;
+   }
+   nav ul li a:hover .icon{
+        color: #BC8200;
+   }
+   nav ul li a:hover .name{
+        color: #BC8200;
+   }
+   .selected{
+       background-color:#002350;
+   }
+
+    
+}

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="css/main.css">
+        <title>PlanIT</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    </head>
+
+    <body onload="calendarActiveOnLoad()">
+        <aside>
+            <figure>
+                <img id="logo" src="images/PantherPlanIT.png" alt="PlanitLogo">
+                
+            </figure>
+            <img src="images/menu.svg">
+            <nav>
+                    <ul>
+                            
+                            <li class="tab-buttons"onclick="changeTabContent(event, 'notifications')">
+                                 <a href = "#">
+                                      <div class="icon">
+                                           <i class="ion-ios-bell" aria-hidden="true"></i>
+                                      </div>
+                                      <div class="name" data-text="Notifications">Notifications</div>
+                                 </a>
+                            </li>
+                            <li calss="tab-buttons"onclick="changeTabContent(event, 'planner')">
+                                      <a href = "#">
+                                           <div class="icon">
+                                                <i class="ion-ios-paper" aria-hidden="true"></i>
+                                           </div>
+                                           <div class="name" data-text="Planner">Planner</div>
+                                      </a>
+                            </li>
+                            <li calss="tab-buttons" onclick="changeTabContent(event, 'calendar')">
+                                      <a href = "#">
+                                           <div class="icon">
+                                                <i class="ion-android-calendar" aria-hidden="true"></i>
+                                           </div>
+                                           <div class="name" data-text="Calendar">Calendar</div>
+                                      </a>
+                            </li>
+                            <li calss="tab-buttons" onclick="changeTabContent(event, 'messages')">
+                                      <a href = "#">
+                                           <div class="icon">
+                                                <i class="ion-chatboxes" aria-hidden="true"></i>
+                                           </div>
+                                           <div class="name" data-text="Messages">Messages</div>
+                                      </a>
+                            </li>
+                            <li calss="tab-buttons" onclick="changeTabContent(event, 'settings')">
+                                      <a href = "#">
+                                           <div class="icon">
+                                                <i class="ion-ios-gear" aria-hidden="true"></i>
+                                           </div>
+                                           <div class="name" data-text="Settings">Settings</div>
+                                      </a>
+                            </li>
+                       </ul>
+            </nav>
+        </aside>
+        <main>
+                <div id="notifications" class="app-content">
+                    <p>Notifications Content</p>            
+                                            
+                </div>
+                <div id="planner" class="app-content">
+                     <p>Planner content</p>
+                </div>
+                <div id="calendar" class="app-content">
+                    <p>Calendar Content</p>
+                    <iframe src="https://calendar.google.com/calendar/embed?src=cbarb035%40fiu.edu&ctz=America%2FNew_York" style="border: 0" width="1000" height="540" frameborder="0" scrolling="yes"></iframe>
+                </div>
+                <div id="messages" class="app-content">
+                    <p>Messages Content</p>
+                </div>
+                <div id="settings" class="app-content">
+                    <p>Settings</p>
+                </div>
+        </main>
+
+        
+        <script>
+                /*Sets the Calendar tab active and displays its content on load*/
+                function calendarActiveOnLoad() {
+                     var i, appContent, navButton;
+                     appContent = document.getElementsByClassName("app-content");
+                     for (i = 0; i < appContent.length; i++) {
+                          appContent[i].style.display = "none";
+                     }
+                     document.getElementById('calendar').style.display = "block";
+                     //document.getElementById('calendarBtn').focus();
+                }
+                /*Switches between page content depending on the button selected.
+                https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_tabs*/
+                function changeTabContent(evt, navButtonName) {
+                     var i, appContent, navButton;
+                     appContent = document.getElementsByClassName("app-content");
+                     navButton = document.getElementsByClassName("nav-button");
+                     for (i = 0; i < appContent.length; i++) {
+                          appContent[i].style.display = "none";
+                     }
+ 
+                     for (i = 0; i < navButton.length; i++) {
+                          navButton[i].className = navButton[i].className.replace(" activate", "");
+                     }
+                     document.getElementById(navButtonName).style.display = "block";
+                     evt.currentTarget.className += " activate";
+                }
+           </script>
+        
+    </body>
+</html>
