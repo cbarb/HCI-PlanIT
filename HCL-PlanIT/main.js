@@ -14,25 +14,11 @@ https://www.youtube.com/channel/UC29ju8bIPH5as8OGnQzwJyA
 //Get required modules
 const electron = require('electron');
 const url = require('url');
-const remote = electron.remote;
 const path = require('path');
 const {app, BrowserWindow, Menu} = require('electron');
 
-
 //Window Declarations
 let logInWin;
-let mainAppWin;
-
-//logInWindow Listeners
-let isLoggedIn;
-
-//For when login is frameless
-/*const closeBtn = document.getElementById('closeBtn');
-closeBtn.addEventListener('click', function (event) {
-    var window = BrowserWindow.getFocusedWindow();
-    window.close();
-});*/
-
 
 //Menus
 const nullMenuTemplate = [
@@ -43,10 +29,9 @@ const nullMenuTemplate = [
 function createLogInWin (){
   //Set window properties
   logInWin = new BrowserWindow({
-    //frame: false,
-    width: 700,
-    height: 600,
-    resizable: false,
+    width: 1080,
+    height: 900,
+    resizable: true,
     show: false,
     center:true
   });
@@ -58,7 +43,7 @@ function createLogInWin (){
   });
   //Loads the contents of index.html to this window.
   logInWin.loadURL(url.format({
-    pathname: path.join(__dirname, 'login.html'),
+    pathname: path.join(__dirname, 'index.html'),
     protocol: 'file:',
     slashes:true
   }));
@@ -75,37 +60,8 @@ function createLogInWin (){
   logInWin.on('closed', () => {
     logInWin = null;
   });
-}
 
-//Temp Function
-function validateCredentials() {
-     createMainAppWin();
-}
-
-function createMainAppWin (){
-
-  mainAppWin = new BrowserWindow({
-    parent: top,
-    modal: true,
-    width: 700,
-    height: 600,
-    resizable: false,
-    show: false,
-    center:true
-  });
-  mainAppWin.once('ready-to-show', () => {
-    logInWin.show();
-  });
-  mainAppWin.loadURL(url.format({
-    pathname: path.join(__dirname, 'main_content.html'),
-    protocol: 'file:',
-    slashes:true
-  }));
-  const mainAppWinMenu = Menu.buildFromTemplate(nullMenuTemplate);
-  mainAppWin.setMenu(mainAppWinMenu);
-  mainAppWin.on('closed', () => {
-      mainAppWin = null;
-  });
+  logInWin.maximize();
 }
 
 /*Handles the core application processes*/
