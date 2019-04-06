@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" type="text/css" href="content_style.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-grid.min.css">
+
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>PlanIT</title>
+</head>
+
+<body>
+    <!--Vertical Navigation Bar-->
+    <div class="nav-bar">
+        <ul>
+            <img src="images/Group 1.png" alt="PlanitLogo">
+            <li>
+                <a href="#">
+                    <div class="icon">
+                        <i class="ion-ios-bell" aria-hidden="true"></i>
+                    </div>
+                    <div class="name" data-text="Notifications">Notifications</div>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <div class="icon">
+                        <i class="ion-ios-paper" aria-hidden="true"></i>
+                    </div>
+                    <div class="name" data-text="Planner">Planner</div>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <div class="icon">
+                        <i class="ion-android-calendar" aria-hidden="true"></i>
+                    </div>
+                    <div class="name" data-text="Calendar">Calendar</div>
+                </a>
+            </li>
+            <li class="activeTab">
+                <a href="#">
+                    <div class="icon activeIcon">
+                        <i class="ion-chatboxes" aria-hidden="true"></i>
+                    </div>
+                    <div class="name activeName" data-text="Messages">Messages</div>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <div class="icon">
+                        <i class="ion-ios-gear" aria-hidden="true"></i>
+                    </div>
+                    <div class="name" data-text="Settings">Settings</div>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <!--Content for message page-->
+    <section class="container">
+        <h3>Inbox</h3>
+        <div class="card">
+            <div class="card-header d-flex">
+                <h5 class="mr-auto">Messages</h5>
+                <div class="dropdown align-self-center mr-3">
+                    <button class="btn btn-sm btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Filter
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="#">HCI</a>
+                        <a class="dropdown-item" href="#">COP</a>
+                        <a class="dropdown-item" href="#">Unread</a>
+                    </div>
+                </div>
+                <button type="button" style="background-color:#002350; border-style:none"
+                    class="btn btn-sm btn-primary pt-0 pb-0">Compose</button>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item list-group-item-action">
+                    <div class="d-flex row pr-3">
+                        <div class="col-9">
+                            <h5 class="font-weight-bold">Vanessa</h5>
+                            <p>Hey how is your semester going?</p>
+                            <span class="w3-tag w3-small w3-blue">new</span><span
+                                class="w3-tag w3-small w3-green ml-2">HCI</span>
+                        </div>
+                        <div class="col-3 ml-auto pr-0 text-right">
+                            <p class="mb-0">4/5/2019</p>
+                            <p class="mb-0">5:47 PM</p>
+                            <span class="mt-4 badge badge-primary badge-pill align-self-e">14</span>
+                        </div>
+                    </div>
+                </li>
+                <li class="list-group-item list-group-item-action">
+                    <div class="d-flex row pr-3">
+                        <div class="col-9">
+                                <h5 class="font-weight-bold">Vanessa</h5>
+                            <p>Hey how is your semester going?</p>
+                            <span class="w3-tag w3-small w3-purple">COP</span>
+                        </div>
+                        <div class="col-3 ml-auto pr-0 text-right">
+                            <p class="mb-0">4/5/2019</p>
+                            <p class="mb-0">5:47 PM</p>
+                            <span class="mt-4 badge badge-primary badge-pill align-self-e">3</span>
+                        </div>
+                    </div>
+                </li>
+                <li class="list-group-item list-group-item-action">
+                    <div class="d-flex row pr-3">
+                        <div class="col-9">
+                                <h5 class="font-weight-bold">Vanessa</h5>
+                            <p>Hey how is your semester going?</p>
+                        </div>
+                        <div class="col-3 ml-auto pr-0 text-right">
+                            <p class="mb-0">4/5/2019</p>
+                            <p class="mb-0">5:47 PM</p>
+                            <span class="mt-4 badge badge-primary badge-pill align-self-e">1</span>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+    </section>
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+        <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</body>
+
+</html>
