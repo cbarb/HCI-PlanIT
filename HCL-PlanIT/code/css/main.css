@@ -8,7 +8,7 @@ body, html {
 }
 
 body {
-    background: #002350;
+    background: #002350 !important;
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
@@ -16,27 +16,26 @@ body {
 aside {
     color: #fff;
     display: grid;
-    grid-template-columns: auto 40px;
+    grid-template-columns: auto 20px;
     padding: 2em;
 }
 
+
 img {
-    width: 40px;
+    
     cursor: pointer;
+    
 }
 
 figure {
     margin: 0;
 }
 
-figcaption {
-    font-size: 1.3em;
-    font-weight: bold;
-}
 
 nav {
     background: #fff;
 }
+
 
 .active {
     position: absolute;
@@ -68,20 +67,27 @@ ul li a {
 main {
     background: #fff;
     padding: 1em 1.4em;
+    
 }
+
 
 
 p {
     font-size: 1.1em;
     line-height: 1.5em;
 }
+@media only screen and (max-width: 1600px) {
+    nav ul li a .name{
+        display: none !important;
+    }
+}
 
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 736px) {
 
     body {
         display: grid;
-        grid-template-columns: 20% auto;
+        grid-template-columns: 10% auto;
         padding: 2em;
     }
 
@@ -107,8 +113,8 @@ p {
         margin-left: auto;
         margin-right: auto;
         margin-top: 40px;
-        margin-bottom: 20px;
-        width: 60%;
+        margin-bottom: 10px;
+        width: 50%;
     }
 
     ul {
@@ -156,6 +162,7 @@ p {
         transition: 0.3s;
         font-weight: bold;
         transform: translateY(5px);
+        display: absolute !important;
    
    }
    nav ul li a:hover {
@@ -170,6 +177,6 @@ p {
    .selected{
        background-color:#002350;
    }
-
+   
     
 }
