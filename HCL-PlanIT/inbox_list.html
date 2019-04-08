@@ -80,9 +80,10 @@
                     </div>
                 </div>
                 <button type="button" style="background-color:#002350; border-style:none"
-                    class="btn btn-sm btn-primary pt-0 pb-0">Compose</button>
+                    class="btn btn-sm btn-primary pt-0 pb-0" data-toggle="modal"
+                    data-target="#composeMsg">Compose</button>
             </div>
-            <ul class="list-group list-group-flush">
+            <ul class="list-group list-group-flush" id="inboxRows">
                 <li class="list-group-item list-group-item-action">
                     <div class="d-flex row pr-3">
                         <div class="col-9">
@@ -94,16 +95,16 @@
                         <div class="col-3 ml-auto pr-0 text-right">
                             <p class="mb-0">4/5/2019</p>
                             <p class="mb-0">5:47 PM</p>
-                            <span class="mt-4 badge badge-primary badge-pill align-self-e">14</span>
+                            <span class="mt-4 badge badge-primary badge-pill align-self-e">2</span>
                         </div>
                     </div>
                 </li>
                 <li class="list-group-item list-group-item-action">
                     <div class="d-flex row pr-3">
                         <div class="col-9">
-                                <h5 class="font-weight-bold">Vanessa</h5>
-                            <p>Hey how is your semester going?</p>
-                            <span class="w3-tag w3-small w3-purple">COP</span>
+                            <h5 class="font-weight-bold">Rob</h5>
+                            <p>When is the homework due?</p>
+                            <span class="w3-tag w3-small w3-purple">COP 4338</span>
                         </div>
                         <div class="col-3 ml-auto pr-0 text-right">
                             <p class="mb-0">4/5/2019</p>
@@ -115,8 +116,8 @@
                 <li class="list-group-item list-group-item-action">
                     <div class="d-flex row pr-3">
                         <div class="col-9">
-                                <h5 class="font-weight-bold">Vanessa</h5>
-                            <p>Hey how is your semester going?</p>
+                            <h5 class="font-weight-bold">Maria</h5>
+                            <p>Have a good break!</p>
                         </div>
                         <div class="col-3 ml-auto pr-0 text-right">
                             <p class="mb-0">4/5/2019</p>
@@ -128,16 +129,101 @@
             </ul>
         </div>
 
+        <!--To create a new message/chat-->
+        <div class="modal fade" id="composeMsg" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Create a new chat</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="messageForm">
+                            <div class="form-group">
+                                Contact:
+                                <input type="text" class="form-control" id="contactName">
+                            </div>
+                            <div class="form-group">
+                                Course:
+                                <input type="text" class="form-control" id="courseName">
+                            </div>
+                            <div class="form-group">
+                                Message:
+                                <textarea class="form-control" rows="5" id="firstMsg"></textarea>
+                            </div>
+                            <div class="col-md-12 text-center">
+                                <button type="submit" class="btn btn-primary" id="newChatBtn">Create Chat</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </section>
-    
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
         integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
         crossorigin="anonymous"></script>
-        <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script>
+
+        const userName = 'Current User';
+        var button = document.getElementById("newChatBtn");
+
+        //function to add a new Inbox row
+        button.addEventListener("click", function (e) {
+            var formContent = document.getElementById("messageForm");
+            var inboxRows = document.getElementById('inboxRows');
+            var entry = document.createElement('li');
+            entry.className = "list-group-item list-group-item-action dropdown";
+            //get information from the form
+            var contact = formContent.elements[0].value;
+            var tag = formContent.elements[1].value;
+            var msg = formContent.elements[2].value;
+            var date = (new Date()).toLocaleDateString();
+            var time = formatAMPM(new Date());
+
+            inboxRows.appendChild(entry);
+            entry.innerHTML =
+                '<div class="d-flex row pr-3"> \
+                        <div class="col-9"> \
+                            <h5 class="font-weight-bold">' + userName + '</h5> \
+                            <p>' + msg + '</p> \
+                            <span class="w3-tag w3-small w3-green">' + tag + '</span> \
+                        </div> \
+                        <div class="col-3 ml-auto pr-0 text-right"> \
+                            <p class="mb-0">' + date + '</p> \
+                            <p class="mb-0">' + time + '</p> \
+                        </div> \
+                    </div>';
+            var modal = document.getElementById("composeMsg");
+            $('#composeMsg').modal('hide');
+            e.preventDefault();
+        });
+
+        //https://stackoverflow.com/questions/8888491/how-do-you-display-javascript-datetime-in-12-hour-am-pm-format
+        function formatAMPM(date) {
+            var hours = date.getHours();
+            var minutes = date.getMinutes();
+            var ampm = hours >= 12 ? 'PM' : 'AM';
+            hours = hours % 12;
+            hours = hours ? hours : 12; // the hour '0' should be '12'
+            minutes = minutes < 10 ? '0' + minutes : minutes;
+            var strTime = hours + ':' + minutes + ' ' + ampm;
+            return strTime;
+        }
+
+    </script>
 </body>
 
 </html>
