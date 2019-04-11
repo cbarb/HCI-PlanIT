@@ -78,6 +78,19 @@ body {
      
 }
 
-section{
+.chat-box{
     
+     width:70% ; 
+     height:95vh;
+     margin-top:30px;
+     
+}
+
+.scroll{
+     max-height: 85vh;
+     overflow-y: auto;
+}
+
+.msg-bubble{
+     width:60%;
 }

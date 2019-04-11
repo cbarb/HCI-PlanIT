@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" type="text/css" href="content_style.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-grid.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>PlanIT</title>
+</head>
+
+<body>
+    <!--Vertical Navigation Bar-->
+    <div class="nav-bar">
+        <ul>
+            <img src="images/Group 1.png" alt="PlanitLogo">
+            <li>
+                <a href="#">
+                    <div class="icon">
+                        <i class="ion-ios-bell" aria-hidden="true"></i>
+                    </div>
+                    <div class="name" data-text="Notifications">Notifications</div>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <div class="icon">
+                        <i class="ion-ios-paper" aria-hidden="true"></i>
+                    </div>
+                    <div class="name" data-text="Planner">Planner</div>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <div class="icon">
+                        <i class="ion-android-calendar" aria-hidden="true"></i>
+                    </div>
+                    <div class="name" data-text="Calendar">Calendar</div>
+                </a>
+            </li>
+            <li class="activeTab">
+                <a href="inbox_list.html">
+                    <div class="icon activeIcon">
+                        <i class="ion-chatboxes" aria-hidden="true"></i>
+                    </div>
+                    <div class="name activeName" data-text="Messages">Messages</div>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <div class="icon">
+                        <i class="ion-ios-gear" aria-hidden="true"></i>
+                    </div>
+                    <div class="name" data-text="Settings">Settings</div>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <!--Content for message page-->
+    <section class="container chat-box card d-flex" style=" background-color: whitesmoke;">
+        <div class="mt-auto">
+            <ul class="pl-0 scroll" id="messageList">
+                <li class="list-group-item msg-bubble">
+                    <h6 style="color:#002350">Vanessa</h6>
+                    <p>How is your semester going?</p>
+                </li>
+            </ul>
+            <div class="input-group mb-3 ">
+                <input type="text" class="form-control" id="msgtext" placeholder="Type Message"
+                    aria-label="type message" aria-describedby="basic-addon2">
+                <div class="input-group-append">
+                    <button class="btn btn-secondary" style="background-color:#002350" type="button" id="sendBtn">Send</button>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+    </section>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+
+        //auto scroll to bottom of messages
+        var list = document.getElementById("messageList");
+        list.scrollTop = list.scrollHeight;
+
+        function updateScroll() {
+            var list = document.getElementById("messageList");
+            list.scrollTop = list.scrollHeight;
+        }
+
+        const userName = 'Current User';
+        var sendBtn = document.getElementById("sendBtn");
+        var input = document.getElementById("msgtext");
+
+      
+        sendBtn.addEventListener("click", sendMsg);
+        input.addEventListener("keydown", function (e) {
+            //pressed enter
+            if (e.keyCode === 13) {  
+                sendMsg();
+            }
+        });
+
+        //function to send a new msg
+        function sendMsg(e) {
+            var list = document.getElementById("messageList");
+            var msg = document.getElementById('msgtext').value;
+            var entry = document.createElement('li');
+            entry.className = "list-group-item msg-bubble mt-3 ml-auto text-right";
+
+            list.appendChild(entry);
+            entry.innerHTML =
+                '<h6 style="color:#ECAD36">' + userName + '</h6> \
+                     <p>' + msg + '</p>';
+       
+            updateScroll();
+            input.value = "";
+        }
+
+    </script>
+</body>
+
+</html>
