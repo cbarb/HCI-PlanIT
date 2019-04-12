@@ -258,7 +258,7 @@
                               <div class="name" data-text="Notifications">Notifications</div>
                          </a>
                     </li>
-                    <li calss="tab-buttons" onclick="changeTabContent(event, 'planner')">
+                    <li class="tab-buttons" onclick="changeTabContent(event, 'planner')">
                          <a href="#">
                               <div class="icon">
                                    <i class="ion-ios-paper" aria-hidden="true"></i>
@@ -266,7 +266,7 @@
                               <div class="name" data-text="Planner">Planner</div>
                          </a>
                     </li>
-                    <li calss="tab-buttons" onclick="changeTabContent(event, 'calendar')">
+                    <li class="tab-buttons" onclick="changeTabContent(event, 'calendar')">
                          <a href="#">
                               <div class="icon activeIcon">
                                    <i class="ion-android-calendar" aria-hidden="true"></i>
@@ -274,7 +274,7 @@
                               <div class="name activeName" data-text="Calendar">Calendar</div>
                          </a>
                     </li>
-                    <li calss="tab-buttons" onclick="changeTabContent(event, 'messages')">
+                    <li class="tab-buttons" onclick="changeTabContent(event, 'messages')">
                          <a href="#">
                               <div class="icon">
                                    <i class="ion-chatboxes" aria-hidden="true"></i>
@@ -282,7 +282,7 @@
                               <div class="name" data-text="Messages">Messages</div>
                          </a>
                     </li>
-                    <li calss="tab-buttons" onclick="changeTabContent(event, 'settings')">
+                    <li class="tab-buttons" onclick="changeTabContent(event, 'settings')">
                          <a href="#">
                               <div class="icon">
                                    <i class="ion-ios-gear" aria-hidden="true"></i>
@@ -330,17 +330,23 @@
           function changeTabContent(evt, navButtonName) {
                var i, appContent, navButton;
                appContent = document.getElementsByClassName("app-content");
-               navButton = document.getElementsByClassName("nav-button");
+               
                for (i = 0; i < appContent.length; i++) {
                     appContent[i].style.display = "none";
                }
-
-               for (i = 0; i < navButton.length; i++) {
-                    navButton[i].className = navButton[i].className.replace(" activate", "");
-               }
+              
                document.getElementById(navButtonName).style.display = "block";
-               evt.currentTarget.className += " activate";
+              
           }
+
+          $(".tab-buttons").click(function(){
+               $("nav ul li a .icon").removeClass("activeIcon");
+               $(this).find(".icon").addClass("activeIcon");
+               $("nav ul li a .name").removeClass("activeName");
+               $(this).find(".name").addClass("activeName");
+          });
+
+         
      </script>
 
 </body>
