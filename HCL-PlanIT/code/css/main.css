@@ -11,6 +11,8 @@ body {
     background: #002350 !important;
     background-repeat: no-repeat;
     background-attachment: fixed;
+    
+    
 }
 
 aside {
@@ -76,19 +78,17 @@ p {
     font-size: 1.1em;
     line-height: 1.5em;
 }
-@media only screen and (max-width: 1600px) {
-    nav ul li a .name{
-        display: none !important;
-    }
-}
 
 
-@media only screen and (min-width: 736px) {
+
+@media only screen and (min-width: 700px) {
 
     body {
         display: grid;
         grid-template-columns: 10% auto;
+        padding-top: 4em;
         padding: 2em;
+        margin-top: 2em;
     }
 
     img {
@@ -96,16 +96,16 @@ p {
     }
 
     aside {
-        background: #DCE1F6;
+        background: white;
         grid-template-columns: auto;
-        grid-template-rows: 20% auto;
+        grid-template-rows: 28% auto;
         padding: 0;
     }
 
     main {
         padding: 4em;
         background: white;
-        background-size: 70%;
+        background-size: 50%;
     }
 
     #logo{
@@ -114,12 +114,13 @@ p {
         margin-right: auto;
         margin-top: 40px;
         margin-bottom: 10px;
-        width: 50%;
+        width: 35%;
     }
 
     ul {
         display: block;
-        margin-top: 2em;
+        margin: 0 0;
+        margin-top: 1em;
         position: relative !important;
         background: none !important;
         width: 100% !important;
@@ -156,7 +157,7 @@ p {
    }
    
    nav ul li a .name{
-        font-size: 15px;
+        font-size: 12px;
         text-align: center;
         color: #002350;
         transition: 0.3s;
@@ -165,9 +166,9 @@ p {
         display: absolute !important;
    
    }
-   nav ul li a:hover {
+   /* nav ul li a:hover {
         background: #002350;
-   }
+   } */
    nav ul li a:hover .icon{
         color: #BC8200;
    }
@@ -177,6 +178,9 @@ p {
    .selected{
        background-color:#002350;
    }
-   
+   .app-content{
+       float: left;
+       margin: 1.5em;
+   }
     
 }
