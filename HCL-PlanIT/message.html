@@ -7,6 +7,7 @@
     <link rel="stylesheet" type="text/css" href="content_style.css">
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <title>PlanIT</title>
@@ -61,23 +62,28 @@
     </div>
 
     <!--Content for message page-->
-    <section class="container chat-box card d-flex" style=" background-color: whitesmoke;">
-        <div class="mt-auto">
-            <ul class="pl-0 scroll" id="messageList">
-                <li class="list-group-item msg-bubble">
-                    <h6 style="color:#002350">Vanessa</h6>
-                    <p>How is your semester going?</p>
-                </li>
-            </ul>
-            <div class="input-group mb-3 ">
-                <input type="text" class="form-control" id="msgtext" placeholder="Type Message"
-                    aria-label="type message" aria-describedby="basic-addon2">
-                <div class="input-group-append">
-                    <button class="btn btn-secondary" style="background-color:#002350" type="button" id="sendBtn">Send</button>
+    <section class="container d-flex" >
+        <div class="card chat-box d-flex" style=" background-color: whitesmoke;">
+            <div class="card-header" style="background-color: #002350">
+                <h5 style="color: white">Contact <span class="dot"></span></h5>
+            </div>
+            <div class="mt-auto p-3">
+                <ul class="pl-0 scroll" id="messageList">
+                    <li class="list-group-item msg-bubble">
+                        <h6 style="color:#002350">Vanessa</h6>
+                        <p>How is your semester going?</p>
+                    </li>
+                </ul>
+                <div class="input-group mb-3 ">
+                    <input type="text" class="form-control" id="msgtext" placeholder="Type Message"
+                        aria-label="type message" aria-describedby="basic-addon2">
+                    <div class="input-group-append">
+                        <button class="btn btn-secondary" style="background-color:#002350" type="button"
+                            id="sendBtn">Send</button>
+                    </div>
                 </div>
             </div>
         </div>
-
 
 
 
@@ -107,11 +113,11 @@
         var sendBtn = document.getElementById("sendBtn");
         var input = document.getElementById("msgtext");
 
-      
+
         sendBtn.addEventListener("click", sendMsg);
         input.addEventListener("keydown", function (e) {
             //pressed enter
-            if (e.keyCode === 13) {  
+            if (e.keyCode === 13) {
                 sendMsg();
             }
         });
@@ -127,7 +133,7 @@
             entry.innerHTML =
                 '<h6 style="color:#ECAD36">' + userName + '</h6> \
                      <p>' + msg + '</p>';
-       
+
             updateScroll();
             input.value = "";
         }

@@ -38,15 +38,6 @@ nav {
 }
 
 
-.active {
-    position: absolute;
-    display: block;
-    background: #fff;
-    width: 50%;
-    left: 0;
-    top: 0;
-    height: 100%;
-}
 
 ul {
     display: none;
@@ -109,7 +100,6 @@ p {
         display: block;
         margin-left: auto;
         margin-right: auto;
-        margin-top: 40px;
         margin-bottom: 10px;
         width: 35%;
     }
@@ -166,14 +156,11 @@ p {
    /* nav ul li a:hover {
         background: #002350;
    } */
-   nav ul li a:hover .icon{
+   nav ul li a:hover .icon, aside nav ul li .activeIcon{
         color: #BC8200;
    }
-   nav ul li a:hover .name{
+   nav ul li a:hover .name, aside nav ul li .activeName{
         color: #BC8200;
-   }
-   .selected{
-       background-color:#002350;
    }
    .app-content{
        float: left;
