@@ -1,8 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,700');
 @import 'http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css';
 
-body, html {
-    height: calc(100% - 2em);
+body{
     margin: 0;
     font-family: 'Montserrat';
 }
@@ -86,9 +85,7 @@ p {
     body {
         display: grid;
         grid-template-columns: 10% auto;
-        padding-top: 4em;
         padding: 2em;
-        margin-top: 2em;
     }
 
     img {
