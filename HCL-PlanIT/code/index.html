@@ -420,7 +420,7 @@
                                </button>
                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                    <a class="dropdown-item" href="#">HCI</a>
-                                   <a class="dropdown-item" href="#">COP</a>
+                                   <a class="dropdown-item" href="#">COP 4338</a>
                                    <a class="dropdown-item" href="#">Unread</a>
                                </div>
                            </div>
@@ -433,7 +433,7 @@
                                <div class="d-flex row pr-3">
                                    <div class="col-9 text-left">
                                        <h5 class="font-weight-bold">Vanessa<span class="w3-tag w3-small w3-green ml-3">HCI</span></h5>
-                                       <p>Hey how is your semester going?</p>
+                                       <p>Vanessa: Hey how is your semester going?</p>
                                    </div>
                                    <div class="col-3 ml-auto pr-0 text-right">
                                        <p class="mb-0">4/5/2019</p>
@@ -446,7 +446,7 @@
                                <div class="d-flex row pr-3">
                                    <div class="col-9 text-left">
                                        <h5 class="font-weight-bold">Rob<span class="w3-tag w3-small w3-purple ml-3">COP 4338</span></h5>
-                                       <p>When is the homework due?</p>
+                                       <p>Rob: When is the homework due?</p>
 
                                    </div>
                                    <div class="col-3 ml-auto pr-0 text-right">
@@ -460,7 +460,7 @@
                                <div class="d-flex row pr-3">
                                    <div class="col-9 text-left">
                                        <h5 class="font-weight-bold">Maria</h5>
-                                       <p>Have a good break!</p>
+                                       <p>Maria: Have a good break!</p>
                                    </div>
                                    <div class="col-3 ml-auto pr-0 text-right">
                                        <p class="mb-0">4/5/2019</p>
@@ -714,7 +714,6 @@
      <!--JS for inbox tab of messages-->
      <script>
 
-         const userName = 'Current User';
          var button = document.getElementById("newChatBtn");
 
          //function to add a new Inbox row
@@ -735,8 +734,8 @@
              entry.innerHTML =
                  '<div class="d-flex row pr-3"> \
                          <div class="col-9 text-left"> \
-                             <h5 class="font-weight-bold">' + userName + '<span class="w3-tag w3-small w3-blue ml-3">' + tag + '</span></h5> \
-                             <p>' + msg + '</p> \
+                             <h5 class="font-weight-bold">' + contact + '<span class="w3-tag w3-small w3-blue ml-3">' + tag + '</span></h5> \
+                             <p>' +  "You: " +msg + '</p> \
                          </div> \
                          <div class="col-3 ml-auto pr-0 text-right"> \
                              <p class="mb-0">' + date + '</p> \

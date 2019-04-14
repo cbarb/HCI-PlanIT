@@ -76,7 +76,7 @@
                 <div class="mt-auto p-3">
                     <ul class="pl-0 scroll" id="messageList">
                         <li class="list-group-item msg-bubble">
-                            <h6 style="color:#002350">Contact</h6>
+                            <h6 style="color:#002350"><b>Contact</b></h6>
                             <p>How is your semester going?</p>
                         </li>
                     </ul>
@@ -112,7 +112,6 @@
             list.scrollTop = list.scrollHeight;
         }
 
-        const userName = 'Current User';
         var sendBtn = document.getElementById("sendBtn");
         var input = document.getElementById("msgtext");
 
@@ -134,7 +133,7 @@
 
             list.appendChild(entry);
             entry.innerHTML =
-                '<h6 style="color:#ECAD36">' + userName + '</h6> \
+                '<h6 style="color:#ECAD36"><b>You</b></h6> \
                      <p>' + msg + '</p>';
 
             updateScroll();
