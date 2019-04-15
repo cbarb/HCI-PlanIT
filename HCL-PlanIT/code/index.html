@@ -353,7 +353,7 @@
             <!--Tabs-->
             <div class="nav nav-tabs messages-tabs">
               <button class="messages-button" onclick="changeMessagesContent(event, 'contactsTab')">Contacts</button>
-              <button class="messages-button" onclick="changeMessagesContent(event, 'inboxTab')">Inbox</button>
+              <button class="messages-button activeBtn" onclick="changeMessagesContent(event, 'inboxTab')">Inbox</button>
             </div>
             <!--Content-->
             <div id="contactsTab" class="nav-item messages-content">
@@ -536,11 +536,16 @@
         padding: 14px 16px;
         transition: 0.3s;
         font-size: 17px;
+        border-bottom: 5px solid transparent;
      }
 
      /* Change background color of buttons on hover */
-    .messages-tabs button:hover .activeMessageTab{
+    .messages-tabs button:hover{
         background-color: #ddd;
+     }
+
+     .messages-tabs button.activeBtn{
+        border-color: #002350;
      }
 
 
@@ -593,7 +598,7 @@
                     navButton[i].className = navButton[i].className.replace(" activate", "");
                }
                document.getElementById(navButtonName).style.display = "block";
-               //evt.currentTarget.className += " active";
+               evt.currentTarget.className += "activeBtn";
           }
 
           /*Sets the  tab active and displays its content on load*/
@@ -620,7 +625,8 @@
                     messagesButton[i].className = messagesButton[i].className.replace(" activate", "");
                }
                document.getElementById(messagesButtonName).style.display = "block";
-               //evt.currentTarget.className += " active";
+               $(".messages-tabs button").removeClass("activeBtn");
+               evt.currentTarget.className += " activeBtn";
           }
 
           $(".nav-button").click(function(){
@@ -629,6 +635,8 @@
                $("nav ul li a .name").removeClass("activeName");
                $(this).find(".name").addClass("activeName");
           });
+
+
      </script>
       <!--JS for adding a contact to the contact list in messages>-->
      <script>
@@ -805,9 +813,9 @@
      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
          integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
          crossorigin="anonymous"></script>
-     <script src="js/bootstrap.bundle.min.js"></script>
+     <script src="../js/bootstrap.bundle.min.js"></script>
      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-     <script src="js/bootstrap.min.js"></script>
+     <script src="../js/bootstrap.min.js"></script>
 
 
 </body>
