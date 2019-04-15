@@ -1,0 +1,29 @@
+.name-settings{
+  font-size: 14px;
+  font-family: 'Montserrat';
+  font-weight: bold;
+  text-align: left;
+}
+.input-settings{
+  font-weight: normal !important;
+  border: .5px solid rgb(231, 231, 231);
+  
+  
+}
+.gender{
+  text-align: left;
+  margin-top: 4em;
+
+}
+img.prof-pic{
+  border-radius: 50% !important;
+  height: 150px;
+  width: 150px;
+  margin-bottom: 4em;
+}
+.header-gender{
+  font-weight: bold;
+  font-family: "Montserrat";
+  text-align: left;
+  font-size: 16px;
+}
