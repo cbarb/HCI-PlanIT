@@ -7,10 +7,8 @@ body{
 }
 
 body {
-    background: #002350 !important;
     background-repeat: no-repeat;
-    background-attachment: fixed;
-    
+    background-attachment: fixed;  
     
 }
 
@@ -71,7 +69,7 @@ main {
     body {
         display: grid;
         grid-template-columns: 10% auto;
-        padding: 2em;
+        padding: 0;
     }
 
     img {
@@ -83,6 +81,7 @@ main {
         grid-template-columns: auto;
         grid-template-rows: 28% auto;
         padding: 0;
+        
     }
 
     main {
@@ -106,6 +105,7 @@ main {
         position: relative !important;
         background: none !important;
         width: 100% !important;
+        position: fixed;
     }
 
     nav ul li a:hover {
@@ -154,6 +154,7 @@ main {
    }
    nav ul li a:hover .name, aside nav ul li .activeName{
         color: #BC8200;
+        
    }
    .app-content{
        float: left;
