@@ -1,8 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,700');
 @import 'http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css';
 
-body, html {
-    height: calc(100% - 2em);
+body{
     margin: 0;
     font-family: 'Montserrat';
 }
@@ -11,8 +10,8 @@ body {
     background: #002350 !important;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    
-    
+
+
 }
 
 aside {
@@ -24,9 +23,9 @@ aside {
 
 
 img {
-    
+
     cursor: pointer;
-    
+
 }
 
 figure {
@@ -39,29 +38,20 @@ nav {
 }
 
 
-.active {
-    position: absolute;
-    display: block;
-    background: #fff;
-    width: 50%;
-    left: 0;
-    top: 0;
-    height: 100%;
-}
 
-ul {
+nav ul {
     display: none;
     list-style-type: none;
     margin: 0;
     padding: 0;
 }
 
-ul li a {
+nav ul li a {
     text-decoration: none;
     text-transform: uppercase;
     font-size: .8em;
     display: block;
-    padding: 1.5em 3em;
+    padding: 1em 2.5em;
     background-color: rgba(255,255,255,.35);
     color: #000;
 }
@@ -69,15 +59,10 @@ ul li a {
 main {
     background: #fff;
     padding: 1em 1.4em;
-    
+
 }
 
 
-
-p {
-    font-size: 1.1em;
-    line-height: 1.5em;
-}
 
 
 
@@ -86,9 +71,7 @@ p {
     body {
         display: grid;
         grid-template-columns: 10% auto;
-        padding-top: 4em;
         padding: 2em;
-        margin-top: 2em;
     }
 
     img {
@@ -112,12 +95,11 @@ p {
         display: block;
         margin-left: auto;
         margin-right: auto;
-        margin-top: 40px;
         margin-bottom: 10px;
         width: 35%;
     }
 
-    ul {
+    nav ul {
         display: block;
         margin: 0 0;
         margin-top: 1em;
@@ -126,21 +108,20 @@ p {
         width: 100% !important;
     }
 
-    ul li a:hover {
+    nav ul li a:hover {
         background-color: #fff;
+        text-decoration: none;
     }
 
     nav {
         background: none;
     }
 
-    p {
-        font-size: 1.5em;
-    }
+
 
     nav ul li a{
-        text-decoration: none;    
-        text-align: center; 
+        text-decoration: none;
+        text-align: center;
         display: block;
         transition: 0.3s;
    }
@@ -148,14 +129,13 @@ p {
         width: 50px;
         height: 50px;
         padding: 0;
-        overflow: hidden;    
         font-size: 50px;
         color: #002350;
         display: inline-block;
         text-align: center;
         transition: 0.3s;
    }
-   
+
    nav ul li a .name{
         font-size: 12px;
         text-align: center;
@@ -164,23 +144,61 @@ p {
         font-weight: bold;
         transform: translateY(5px);
         display: absolute !important;
-   
+
    }
    /* nav ul li a:hover {
         background: #002350;
    } */
-   nav ul li a:hover .icon{
+   nav ul li a:hover .icon, aside nav ul li .activeIcon{
         color: #BC8200;
    }
-   nav ul li a:hover .name{
+   nav ul li a:hover .name, aside nav ul li .activeName{
         color: #BC8200;
-   }
-   .selected{
-       background-color:#002350;
+<<<<<<< HEAD
+=======
+
+>>>>>>> af883d49bf88241ee2c601efaf7cfb878b803569
    }
    .app-content{
        float: left;
        margin: 1.5em;
    }
-    
+
+}
+
+/* Message chat */
+.chat-box{
+    width:90% ;
+    height:80vh;
+}
+
+.scroll{
+    max-height: 54vh;
+    overflow-y: auto;
+}
+
+.msg-bubble{
+    width:60%;
+}
+
+.dot{
+    height: 10px;
+    width: 10px;
+    background-color: green;
+    border-radius: 50%;
+    display: inline-block;
+    margin-left: 5px;
+}
+
+a.back{
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #f1f1f1;
+    color: black;
+}
+
+.back:hover{
+    background-color: #ddd;
+    color: black;
 }

@@ -6,8 +6,8 @@
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <meta http-equiv="X-UA-Compatible" content="ie=edge">
      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-     <link rel="stylesheet" href="css/main.css">
      <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+     <link rel="stylesheet" href="css/main.css">
      <title>PlanIT</title>
      <link href='css/fullcalendar.css' rel='stylesheet' />
 	<link href='css/fullcalendar.print.css' rel='stylesheet' media='print' />
@@ -310,10 +310,10 @@
                     </li>
                     <li class="nav-button" onclick="changeTabContent(event, 'calendar')">
                          <a href="#">
-                              <div class="icon">
+                              <div class="icon activeIcon">
                                    <i class="ion-android-calendar" aria-hidden="true"></i>
                               </div>
-                              <div class="name" data-text="Calendar">Calendar</div>
+                              <div class="name activeName" data-text="Calendar">Calendar</div>
                          </a>
                     </li>
                     <li class="nav-button" onclick="changeTabContent(event, 'messages')">
@@ -353,7 +353,7 @@
             <!--Tabs-->
             <div class="nav nav-tabs messages-tabs">
               <button class="messages-button" onclick="changeMessagesContent(event, 'contactsTab')">Contacts</button>
-              <button class="messages-button" onclick="changeMessagesContent(event, 'inboxTab')">Inbox</button>
+              <button class="messages-button activeBtn" onclick="changeMessagesContent(event, 'inboxTab')">Inbox</button>
             </div>
             <!--Content-->
             <div id="contactsTab" class="nav-item messages-content">
@@ -378,11 +378,11 @@
                                      <div class="modal-body">
                                          <form id="contactForm">
                                              <div class="form-group">
-                                                 Name:
+                                                 <div style="float: left">Name:</div>
                                                  <input type="text" class="form-control" name="personName" id="addName">
                                              </div>
                                              <div class="form-group">
-                                                 Phone:
+                                                 <div style="float: left">Phone:</div>
                                                  <input type="text" class="form-control" name="personPhone" id="addPhone">
                                              </div>
                                              <div class="col-md-12 text-center">
@@ -398,9 +398,7 @@
                          </div>
                       </div>
                       <div class="mx-auto" id="emptyDefFill">
-                        <br/>
                         <h5>Click on +Add button to start adding contacts.</h5>
-                        <br/>
                       </div>
                       <ul class="list-group list-group-flush messagesScrollable" id="peopleList">
                           <!--Information is dynamically added here-->
@@ -420,7 +418,7 @@
                                </button>
                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                    <a class="dropdown-item" href="#">HCI</a>
-                                   <a class="dropdown-item" href="#">COP</a>
+                                   <a class="dropdown-item" href="#">COP 4338</a>
                                    <a class="dropdown-item" href="#">Unread</a>
                                </div>
                            </div>
@@ -433,7 +431,7 @@
                                <div class="d-flex row pr-3">
                                    <div class="col-9 text-left">
                                        <h5 class="font-weight-bold">Vanessa<span class="w3-tag w3-small w3-green ml-3">HCI</span></h5>
-                                       <p>Hey how is your semester going?</p>
+                                       <p>Vanessa: Hey how is your semester going?</p>
                                    </div>
                                    <div class="col-3 ml-auto pr-0 text-right">
                                        <p class="mb-0">4/5/2019</p>
@@ -442,11 +440,11 @@
                                    </div>
                                </div>
                            </a>
-                           <a href="#" class="list-group-item list-group-item-action">
+                           <a href="message.html" class="list-group-item list-group-item-action">
                                <div class="d-flex row pr-3">
                                    <div class="col-9 text-left">
                                        <h5 class="font-weight-bold">Rob<span class="w3-tag w3-small w3-purple ml-3">COP 4338</span></h5>
-                                       <p>When is the homework due?</p>
+                                       <p>Rob: When is the homework due?</p>
 
                                    </div>
                                    <div class="col-3 ml-auto pr-0 text-right">
@@ -456,11 +454,11 @@
                                    </div>
                                </div>
                            </a>
-                           <a href="#" class="list-group-item list-group-item-action">
+                           <a href="message.html" class="list-group-item list-group-item-action">
                                <div class="d-flex row pr-3">
                                    <div class="col-9 text-left">
                                        <h5 class="font-weight-bold">Maria</h5>
-                                       <p>Have a good break!</p>
+                                       <p>Maria: Have a good break!</p>
                                    </div>
                                    <div class="col-3 ml-auto pr-0 text-right">
                                        <p class="mb-0">4/5/2019</p>
@@ -539,10 +537,13 @@
      }
 
      /* Change background color of buttons on hover */
-    .messages-tabs button:hover .activeMessageTab{
+    .messages-tabs button:hover{
         background-color: #ddd;
      }
 
+    .messages-tabs button.activeBtn{
+         border-color:#002350;
+    }
 
      /* Style the tab content */
     .messages-content {
@@ -566,9 +567,6 @@
             inboxActiveOnLoad();
           }
 
-          function changeToActiveTag(evt) {
-
-          }
           /*Sets the Calendar tab active and displays its content on load*/
           function calendarActiveOnLoad() {
                var i, appContent, navButton;
@@ -593,7 +591,7 @@
                     navButton[i].className = navButton[i].className.replace(" activate", "");
                }
                document.getElementById(navButtonName).style.display = "block";
-               //evt.currentTarget.className += " active";
+               evt.currentTarget.className += " activeBtn";
           }
 
           /*Sets the  tab active and displays its content on load*/
@@ -620,8 +618,16 @@
                     messagesButton[i].className = messagesButton[i].className.replace(" activate", "");
                }
                document.getElementById(messagesButtonName).style.display = "block";
-               //evt.currentTarget.className += " active";
+               $(".messages-tabs button").removeClass("activeBtn");
+               evt.currentTarget.className += " activeBtn";
           }
+
+          $(".nav-button").click(function(){
+         	     $("nav ul li a .icon").removeClass("activeIcon");
+         	     $(this).find(".icon").addClass("activeIcon");
+         	     $("nav ul li a .name").removeClass("activeName");
+         	     $(this).find(".name").addClass("activeName");
+         	});
      </script>
       <!--JS for adding a contact to the contact list in messages>-->
      <script>
@@ -685,8 +691,24 @@
                  var defaultFill = document.getElementById('emptyDefFill');
                  defaultFill.style.display = 'none';
              }
+             var personContact = document.getElementById('addPhone').value;
+             console.log(personContact);
              entry.innerHTML =
-             personName + "<div class=\"text-right\"><button type=\"button\" class=\"btn btn-sm btn-primary delButton\" id=\"#delContact\"> - </button><\div>"
+             "<span style=\"float: left\">" + personName + "</span>" +
+             "<div class=\"dropdown text-right\">" +
+                  "<button type=\"button\" class=\"btn btn-sm btn-secondary dropdown-toggle\" id=\"sendMessageDropDown\"" +
+                       " data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\"> Actions </button>" +
+                  "<div class=\"dropdown-menu\" aria-labelledby=\"sendMessageDropDown\">" +
+                       "<a class=\"dropdown-item\" href=\"#\">Compose</a>" +
+                       "<a class=\"dropdown-item\" href=\"#\">Add to group</a>" +
+                       "<a class=\"dropdown-item\" data-toggle=\"tooltip\" data-trigger=\"hover\" title=\"Phone Number:\n\n" + personContact + "\" href=\"#\">View Number</a>" +
+                  "</div>" +
+             "<button type=\"button\" style=\"background-color:#002350; border-style:none; margin-left:10px;\" class=\"btn btn-sm btn-primary delButton\" id=\"#delContact\"> - </button>" +
+             "</div>";
+
+             /*entry.innerHTML =		             entry.innerHTML =
+             	             personName + "<div class=\"text-right\"><button type=\"button\" class=\"btn btn-sm btn-primary delButton\" id=\"#delContact\"> - </button><\div>"
+            */
              e.preventDefault();
          });
 
@@ -694,16 +716,16 @@
            button*/
          /*TODO:Delete corresponding information from array*/
          $(document).ready(function () {
+          $('[data-toggle="popover"]').popover();
           $(document).on('click','.delButton', function () {
               console.log('delete');
               $(this).closest("li").remove();
           });
         });
+
      </script>
      <!--JS for inbox tab of messages-->
      <script>
-
-         const userName = 'Current User';
          var button = document.getElementById("newChatBtn");
 
          //function to add a new Inbox row
@@ -712,7 +734,7 @@
              var inboxRows = document.getElementById('inboxRows');
              var entry = document.createElement('a');
              entry.className = "list-group-item list-group-item-action dropdown";
-             entry.href = "#";
+             entry.href = "message.html";
              //get information from the form
              var contact = formContent.elements[0].value;
              var tag = formContent.elements[1].value.toUpperCase();
@@ -724,8 +746,8 @@
              entry.innerHTML =
                  '<div class="d-flex row pr-3"> \
                          <div class="col-9 text-left"> \
-                             <h5 class="font-weight-bold">' + userName + '<span class="w3-tag w3-small w3-blue ml-3">' + tag + '</span></h5> \
-                             <p>' + msg + '</p> \
+                             <h5 class="font-weight-bold">' + contact + '<span class="w3-tag w3-small w3-blue ml-3">' + tag + '</span></h5> \
+                             <p>' + "You: " + msg + '</p> \
                          </div> \
                          <div class="col-3 ml-auto pr-0 text-right"> \
                              <p class="mb-0">' + date + '</p> \
