@@ -7,6 +7,8 @@ body{
 }
 
 body {
+    height: 100vh;
+    background-color: #002350 !important;
     background-repeat: no-repeat;
     background-attachment: fixed;  
     
@@ -69,7 +71,7 @@ main {
     body {
         display: grid;
         grid-template-columns: 10% auto;
-        padding: 0;
+        padding: 2em;
     }
 
 
