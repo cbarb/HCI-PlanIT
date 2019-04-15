@@ -1,0 +1,279 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700');
+@import 'http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css';
+
+/* PLANNER RELATED STYLES */
+#planner {
+    width: 100%;
+    height: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#planner .list-group-item {
+    border: 0;
+}
+
+#planner .list-group-item:last-child {
+    border: 0;
+}
+
+.dateHead{
+    font-size: 14px;
+    font-weight: bold;
+    border-bottom: 2px solid grey;
+}
+
+
+
+.planner-event{
+    height: 50px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.planner-event p{
+    margin: 0;
+    font-size: 14px;
+}
+
+.planner-time{
+    height: 30px;
+    padding-top: 2px;  
+    padding-bottom: 2px; 
+}
+.all-day{
+    padding-top: 8px;  
+    padding-bottom: 8px;
+}
+.planner-time p{
+    font-size: 9px;
+    text-align: right;
+}
+
+
+.planner-tag{
+    height: 30px;
+    width: 100%;
+    padding-top: 3px;  
+    padding-bottom: 3px; 
+}
+
+.planner-title{
+    padding-top: 4px;  
+    padding-bottom: 4px; 
+}
+
+
+
+#external-events {
+    float: left;
+    width: 150px;
+    padding: 0 10px;
+    text-align: left;
+}
+
+#external-events h4 {
+    font-size: 16px;
+    margin-top: 0;
+    padding-top: 1em;
+}
+
+.external-event {
+    /* try to mimick the look of a real event */
+    margin: 10px 0;
+    padding: 2px 4px;
+    background: #3366CC;
+    color: #fff;
+    font-size: .85em;
+    cursor: pointer;
+}
+
+#external-events p {
+    margin: 1.5em 0;
+    font-size: 11px;
+    color: #666;
+}
+
+#external-events p input {
+    margin: 0;
+    vertical-align: middle;
+}
+
+#calendar {
+    /* 		float: right; */
+    margin: 0 auto;
+    width: 85%;
+    background-color: #FFFFFF;
+    border-radius: 6px;
+    box-shadow: 0 1px 2px #C3C3C3;
+}
+
+
+body{
+    margin: 0;
+    font-family: 'Montserrat';
+}
+
+body {
+    background: #002350 !important;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    
+    
+}
+
+aside {
+    color: #fff;
+    display: grid;
+    grid-template-columns: auto 20px;
+    padding: 2em;
+}
+
+
+img {
+    
+    cursor: pointer;
+    
+}
+
+figure {
+    margin: 0;
+}
+
+
+nav {
+    background: #fff;
+}
+
+
+nav ul {
+    display: none;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li a {
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: .8em;
+    display: block;
+    padding: 1.5em 3em;
+    background-color: rgba(255,255,255,.35);
+    color: #000;
+}
+
+main {
+    background: #fff;
+    padding: 1em 1.4em;
+    
+}
+
+
+
+nav p {
+    font-size: 1.1em;
+    line-height: 1.5em;
+}
+
+
+
+@media only screen and (min-width: 700px) {
+
+    body {
+        display: grid;
+        grid-template-columns: 10% auto;
+        padding: 2em;
+    }
+
+    img {
+        display: none;
+    }
+
+    aside {
+        background: white;
+        grid-template-columns: auto;
+        grid-template-rows: 28% auto;
+        padding: 0;
+    }
+
+    main {
+        padding: 4em;
+        background: white;
+        background-size: 50%;
+    }
+
+    #logo{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 40px;
+        margin-bottom: 10px;
+        width: 35%;
+    }
+
+    nav ul {
+        display: block;
+        margin: 0 0;
+        margin-top: 1em;
+        position: relative !important;
+        background: none !important;
+        width: 100% !important;
+    }
+
+    nav ul li a:hover {
+        background-color: #fff;
+    }
+
+    nav {
+        background: none;
+    }
+
+    nav p {
+        font-size: 1.5em;
+    }
+
+    nav ul li a{
+        text-decoration: none;    
+        text-align: center; 
+        display: block;
+        transition: 0.3s;
+   }
+   nav ul li a .icon{
+        width: 50px;
+        height: 50px;
+        padding: 0;
+        overflow: hidden;    
+        font-size: 50px;
+        color: #002350;
+        display: inline-block;
+        text-align: center;
+        transition: 0.3s;
+   }
+   
+   nav ul li a .name{
+        font-size: 12px;
+        text-align: center;
+        color: #002350;
+        transition: 0.3s;
+        font-weight: bold;
+        transform: translateY(5px);
+        display: absolute !important;
+   
+   }
+   /* nav ul li a:hover {
+        background: #002350;
+   } */
+   nav ul li a:hover .icon{
+        color: #BC8200;
+   }
+   nav ul li a:hover .name{
+        color: #BC8200;
+   }
+   .selected{
+       background-color:#002350;
+   }
+   .app-content{
+       float: left;
+       margin: 1.5em;
+   }
+    
+}

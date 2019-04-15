@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+     
+     <title>PlanIT</title>
+
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+     <link href='css/fullcalendar.css' rel='stylesheet' />
+     <link href='css/fullcalendar.print.css' rel='stylesheet' media='print' />
+     <link rel="stylesheet" href="css/main.css">
+    
+</head>
+
+<body onload="calendarActiveOnLoad()">
+     <aside>
+          <img src="images/menu.svg">
+          <nav>
+               <ul>
+                    <figure>
+                         <img id="logo" src="images/Group 1.png" alt="PlanitLogo">
+                    </figure>
+
+                    <li class="tab-buttons" onclick="changeTabContent(event, 'notifications')">
+                         <a href="#">
+                              <div class="icon">
+                                   <i class="ion-ios-bell" aria-hidden="true"></i>
+                              </div>
+                              <div class="name" data-text="Notifications">Notifications</div>
+                         </a>
+                    </li>
+
+                    <li calss="tab-buttons" onclick="changeTabContent(event, 'planner')">
+                         <a href="#">
+                              <div class="icon">
+                                   <i class="ion-ios-paper" aria-hidden="true"></i>
+                              </div>
+                              <div class="name" data-text="Planner">Planner</div>
+                         </a>
+                    </li>
+
+                    <li calss="tab-buttons" onclick="changeTabContent(event, 'calendar')">
+                         <a href="#">
+                              <div class="icon">
+                                   <i class="ion-android-calendar" aria-hidden="true"></i>
+                              </div>
+                              <div class="name" data-text="Calendar">Calendar</div>
+                         </a>
+                    </li>
+
+                    <li calss="tab-buttons" onclick="changeTabContent(event, 'messages')">
+                         <a href="#">
+                              <div class="icon">
+                                   <i class="ion-chatboxes" aria-hidden="true"></i>
+                              </div>
+                              <div class="name" data-text="Messages">Messages</div>
+                         </a>
+                    </li>
+
+                    <li calss="tab-buttons" onclick="changeTabContent(event, 'settings')">
+                         <a href="#">
+                              <div class="icon">
+                                   <i class="ion-ios-gear" aria-hidden="true"></i>
+                              </div>
+                              <div class="name" data-text="Settings">Settings</div>
+                         </a>
+                    </li>
+
+               </ul>
+          </nav>
+     </aside>
+     <main>
+          <div id="notifications" class="app-content">
+               <p>Notifications Content</p>
+          </div>
+
+          <div id="planner" class="app-content">
+               <div class="list-group">
+                    <div class="list-group-item list-group-item-action flex-column align-items-start">
+                         <div class="d-flex w-100 justify-content-between dateHead">
+                              <p>Monday, April 8th</p>
+                         </div>
+                         <div class="list-group">
+                              <div class="container">
+                                   <div class="row planner-event">
+                                        <div class="col-1">
+                                             <div class="planner-time">
+                                                  <p>11:00 AM</p>
+                                                  <p>1:00 PM</p>
+                                             </div>
+                                        </div>
+                                        <div class="col-1">
+                                             <div class="btn btn-primary planner-tag">
+                                                  <p>tag</p>
+                                             </div>
+                                        </div>
+                                        <div class="col-10 planner-title">
+                                             <p>title</p>
+                                        </div>
+                                   </div>
+                              </div>
+                              <div class="container">
+                                   <div class="row planner-event">
+                                        <div class="col-1">
+                                             <div class="planner-time">
+                                                  <p>11:00 AM</p>
+                                                  <p>1:00 PM</p>
+                                             </div>
+                                        </div>
+                                        <div class="col-1">
+                                             <div class="btn btn-primary planner-tag">
+                                                  <p>tag</p>
+                                             </div>
+                                        </div>
+                                        <div class="col-10 planner-title">
+                                             <p>title</p>
+                                        </div>
+                                        </div>
+                              </div>
+                              <div class="container">
+                                   <div class="row planner-event">
+                                        <div class="col-1">
+                                             <div class="planner-time all-day">
+                                                  <p>All-Day</p>
+                                             </div>
+                                        </div>
+                                        <div class="col-1">
+                                             <div class="btn btn-primary planner-tag">
+                                                  <p>tag</p>
+                                             </div>
+                                        </div>
+                                        <div class="col-10 planner-title">
+                                             <p>title</p>
+                                        </div>
+                                   </div>
+                              </div>
+                         </div>
+                    </div>
+                    <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                         <div class="d-flex w-100 justify-content-between dateHead">
+                              <p>Tuesday, April 9th</p>
+                         </div>
+                         <div class="list-group">
+                                   <div class="container">
+                                        <div class="row">
+                                             <div class="col-1">
+                                                  <p>time</p>
+                                             </div>
+                                             <div class="col-1">
+                                                  <p>tag</p>
+                                             </div>
+                                             <div class="col-10">
+                                                  <p>title</p>
+                                             </div>
+                                        </div>
+                                   </div>
+                                   <div class="container">
+                                        <div class="row">
+                                             <div class="col-1">
+                                                  <p>time</p>
+                                             </div>
+                                             <div class="col-1">
+                                                  <p>tag</p>
+                                             </div>
+                                             <div class="col-10">
+                                                  <p>title</p>
+                                             </div>
+                                             </div>
+                                   </div>
+                                   <div class="container">
+                                        <div class="row">
+                                             <div class="col-1">
+                                                  <p>time</p>
+                                             </div>
+                                             <div class="col-1">
+                                                  <p>tag</p>
+                                             </div>
+                                             <div class="col-10">
+                                                  <p>title</p>
+                                             </div>
+                                        </div>
+                                   </div>
+                              </div>
+                    </a>
+                    <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                         <div class="d-flex w-100 justify-content-between dateHead">
+                              <p>Wednesday, April 9th</p>
+                         </div>
+                         <div class="list-group">
+                                   <div class="container">
+                                        <div class="row">
+                                             <div class="col-1">
+                                                  <p>time</p>
+                                             </div>
+                                             <div class="col-1">
+                                                  <p>tag</p>
+                                             </div>
+                                             <div class="col-10">
+                                                  <p>title</p>
+                                             </div>
+                                        </div>
+                                   </div>
+                                   <div class="container">
+                                        <div class="row">
+                                             <div class="col-1">
+                                                  <p>time</p>
+                                             </div>
+                                             <div class="col-1">
+                                                  <p>tag</p>
+                                             </div>
+                                             <div class="col-10">
+                                                  <p>title</p>
+                                             </div>
+                                             </div>
+                                   </div>
+                                   <div class="container">
+                                        <div class="row">
+                                             <div class="col-1">
+                                                  <p>time</p>
+                                             </div>
+                                             <div class="col-1">
+                                                  <p>tag</p>
+                                             </div>
+                                             <div class="col-10">
+                                                  <p>title</p>
+                                             </div>
+                                        </div>
+                                   </div>
+                              </div>
+                    </a>
+               </div>
+          </div>
+
+          <div id="calendar" class="app-content">     
+          </div>
+
+          <div id="messages" class="app-content">
+               <p>Messages Content</p>
+          </div>
+          
+          <div id="settings" class="app-content">
+               <p>Settings</p>
+          </div>
+     </main>
+
+
+     <script>
+          /*Sets the Calendar tab active and displays its content on load*/
+          function calendarActiveOnLoad() {
+               var i, appContent, navButton;
+               appContent = document.getElementsByClassName("app-content");
+               for (i = 0; i < appContent.length; i++) {
+                    appContent[i].style.display = "none";
+               }
+               document.getElementById('calendar').style.display = "block";
+               //document.getElementById('calendarBtn').focus();
+          }
+          /*Switches between page content depending on the button selected.
+          https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_tabs*/
+          function changeTabContent(evt, navButtonName) {
+               var i, appContent, navButton;
+               appContent = document.getElementsByClassName("app-content");
+               navButton = document.getElementsByClassName("nav-button");
+               for (i = 0; i < appContent.length; i++) {
+                    appContent[i].style.display = "none";
+               }
+
+               for (i = 0; i < navButton.length; i++) {
+                    navButton[i].className = navButton[i].className.replace(" activate", "");
+               }
+               document.getElementById(navButtonName).style.display = "block";
+               evt.currentTarget.className += " activate";
+          }
+     </script>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<script src='js/jquery-1.10.2.js' type="text/javascript"></script>
+<script src='js/jquery-ui.custom.min.js' type="text/javascript"></script>
+<script src='js/fullcalendar.js' type="text/javascript"></script> 
+
+<script src='js/calendar.js' type="text/javascript"></script>  
+<script src='js/planner.js' type="text/javascript"></script>    
+
+</body>
+
+</html>
