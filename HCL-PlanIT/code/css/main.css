@@ -154,14 +154,6 @@ main {
    }
    nav ul li a:hover .name, aside nav ul li .activeName{
         color: #BC8200;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-        
->>>>>>> af883d49bf88241ee2c601efaf7cfb878b803569
-=======
-        
->>>>>>> 1e530f2497c1a517357f71eb4c574cfbe4eefb07
    }
    .app-content{
        float: left;
