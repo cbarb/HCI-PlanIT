@@ -15,8 +15,7 @@
 	<script src='js/jquery-1.10.2.js' type="text/javascript"></script>
 	<script src='js/jquery-ui.custom.min.js' type="text/javascript"></script>
 	<script src='js/fullcalendar.js' type="text/javascript"></script>
-  <!--<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">-->
-
+  
 
      <!--Code for Calendar-->
      <script>
@@ -242,47 +241,6 @@
      <!--Code for Calendar END-->
 
 </head>
-<style>
-/*
-.nav-bar {
-     float: left;
-     height: 100%;
-     width: 15%;
-     overflow: hidden;
-     border: 1px solid #blue;
-}
-
-.nav-bar li{
-     background-color: blue;
-     color: white;
-     width: 100%;
-     height: 20%
-     display: block;
-     border: none;
-     outline: none;
-     cursor: pointer;
-     padding: 20px 24px;
-     transition: 0.3s;
-     font-size: 16px;
-}
-
-.nav-bar li:hover {
-     background-color: white;
-     color: blue;
-}
-
-.nav-bar li.active {
-     background-color: white;
-     color: blue;
-}
-
-.app-content {
-     float: right;
-     height: 100%;
-     width: 80%;
-     margin-left: 10px
-}*/
-</style>
 <body onload="funcToCallAtLoad()">
      <aside>
 
@@ -355,7 +313,7 @@
               <button class="messages-button" onclick="changeMessagesContent(event, 'contactsTab')">Contacts</button>
               <button class="messages-button activeBtn" onclick="changeMessagesContent(event, 'inboxTab')">Inbox</button>
             </div>
-            <!--Content-->
+            <!--Contacts Content-->
             <div id="contactsTab" class="nav-item messages-content">
               <div class="container">
                   <div class="card">
@@ -408,6 +366,7 @@
                   </div>
               </div>
             </div>
+            <!--Inbox Content-->
             <div id="inboxTab" class="nav-item messages-content">
                <section class="container">
                    <div class="card">
@@ -517,52 +476,6 @@
                <p>Settings</p>
           </div>
      </main>
-
-     <style>
-     /* Style the tab */
-     .tab {
-        overflow: hidden;
-        border: 1px solid #ccc;
-        background-color: #f1f1f1;
-     }
-
-     /* Style the buttons inside the tab */
-     .messages-tabs button {
-        background-color: inherit;
-        float: left;
-        border: none;
-        outline: none;
-        cursor: pointer;
-        padding: 14px 16px;
-        transition: 0.3s;
-        font-size: 17px;
-        border-bottom: 5px solid transparent;
-     }
-
-     /* Change background color of buttons on hover */
-    .messages-tabs button:hover{
-        background-color: #ddd;
-     }
-
-     .messages-tabs button.activeBtn{
-        border-color: #002350;
-     }
-
-
-     /* Style the tab content */
-    .messages-content {
-        display: none;
-        padding: 6px 12px;
-        /*border: 1px solid #ccc;*/
-        border-top: none;
-    }
-
-    .messagesScrollable{
-        height: 350px;
-        overflow-y: scroll;
-    }
-
-     </style>
      <!--JS for navigation tab switching the navigation the menu>-->
      <script>
 
@@ -629,6 +542,7 @@
                evt.currentTarget.className += " activeBtn";
           }
 
+          //change active for nav bar
           $(".nav-button").click(function(){
                $("nav ul li a .icon").removeClass("activeIcon");
                $(this).find(".icon").addClass("activeIcon");
@@ -761,48 +675,6 @@
              minutes = minutes < 10 ? '0' + minutes : minutes;
              var strTime = hours + ':' + minutes + ' ' + ampm;
              return strTime;
-         }
-
-     </script>
-     <!--JS code for the messages-->
-     <script>
-
-         //auto scroll to bottom of messages
-         var list = document.getElementById("messageList");
-         list.scrollTop = list.scrollHeight;
-
-         function updateScroll() {
-             var list = document.getElementById("messageList");
-             list.scrollTop = list.scrollHeight;
-         }
-
-         const userName = 'Current User';
-         var sendBtn = document.getElementById("sendBtn");
-         var input = document.getElementById("msgtext");
-
-
-         sendBtn.addEventListener("click", sendMsg);
-         input.addEventListener("keydown", function (e) {
-             //pressed enter
-             if (e.keyCode === 13) {
-                 sendMsg();
-             }
-         });
-
-         //function to send a new msg
-         function sendMsg(e) {
-             var list = document.getElementById("messageList");
-             var msg = document.getElementById('msgtext').value;
-             var entry = document.createElement('li');
-             entry.className = "list-group-item msg-bubble mt-3 ml-auto text-right";
-
-             list.appendChild(entry);
-             entry.innerHTML =
-                 '<h6 style="color:#ECAD36">' + userName + '</h6> \
-                      <p>' + msg + '</p>';
-
-             updateScroll();
-             input.value = "";
          }
 
      </script>
