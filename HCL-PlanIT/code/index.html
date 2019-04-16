@@ -671,7 +671,7 @@
              var personList = document.getElementById('peopleList');
              var list = personList.getElementsByTagName('li');
              var entry = document.createElement('li');
-             entry.className = "list-group-item list-group-item-action personContact dropdown";
+             entry.className = "list-group-item list-group-item-action personContact dropdown text-left";
              var name = document.createTextNode(formContent.elements[0].value);
              contacts.addToContacts(formContent.elements[0].value, formContent.elements[1].value);
 
@@ -693,8 +693,7 @@
              }
              var personContact = document.getElementById('addPhone').value;
              console.log(personContact);
-             entry.innerHTML =
-             "<span style=\"float: left\">" + personName + "</span>" +
+             var buttonsString =
              "<div class=\"dropdown text-right\">" +
                   "<button type=\"button\" class=\"btn btn-sm btn-secondary dropdown-toggle\" id=\"sendMessageDropDown\"" +
                        " data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\"> Actions </button>" +
@@ -705,10 +704,7 @@
                   "</div>" +
              "<button type=\"button\" style=\"background-color:#002350; border-style:none; margin-left:10px;\" class=\"btn btn-sm btn-primary delButton\" id=\"#delContact\"> - </button>" +
              "</div>";
-
-             /*entry.innerHTML =		             entry.innerHTML =
-             	             personName + "<div class=\"text-right\"><button type=\"button\" class=\"btn btn-sm btn-primary delButton\" id=\"#delContact\"> - </button><\div>"
-            */
+             entry.innerHTML += buttonsString;
              e.preventDefault();
          });
 
