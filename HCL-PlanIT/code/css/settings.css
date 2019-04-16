@@ -5,28 +5,35 @@
   text-align: left;
 }
 .input-settings{
+  margin-top:2px;
   font-weight: normal !important;
-  border: .5px solid rgb(231, 231, 231);
-  padding: 5px 10px;
-  border-radius: 5px;
+  border-bottom: .5px solid rgb(231, 231, 231);
   
 }
-
-.settings-title{
-  border-bottom: 1px solid rgb(231, 231, 231);
-  margin-bottom: 50px;
+.settings-cont{
+  text-align: left;
+  margin-bottom: 2em;
 }
-
 .gender{
+  
   text-align: left;
   margin-top: 4em;
+  width:100vh;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 
+}
+.personal-info{
+  width: 100vh;
 }
 img.prof-pic{
   border-radius: 50% !important;
   height: 150px;
   width: 150px;
   margin-bottom: 4em;
+  margin-right: 4em;
   float: left;
 }
 .header-gender{
@@ -34,4 +41,144 @@ img.prof-pic{
   font-family: "Montserrat";
   text-align: left;
   font-size: 16px;
+  border-top: .5px solid rgb(231, 231, 231);
+  margin-bottom:3em;
+}
+[type="radio"]:checked,
+[type="radio"]:not(:checked) {
+    position: absolute;
+    left: -9999px;
+}
+[type="radio"]:checked + label,
+[type="radio"]:not(:checked) + label
+{
+    position: relative;
+    padding-left: 28px;
+    cursor: pointer;
+    line-height: 20px;
+    display: inline-block;
+    color: #000;
+}
+[type="radio"]:checked + label:before,
+[type="radio"]:not(:checked) + label:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 18px;
+    height: 18px;
+    border: 1px solid #ddd;
+    border-radius: 100%;
+    background: #fff;
+}
+[type="radio"]:checked + label:after,
+[type="radio"]:not(:checked) + label:after {
+    content: '';
+    width: 12px;
+    height: 12px;
+    background: #BC8200;
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    border-radius: 100%;
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+}
+[type="radio"]:not(:checked) + label:after {
+    opacity: 0;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+}
+[type="radio"]:checked + label:after {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+}
+button.save{
+  background-color: #002350; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-top: 4em;
+  cursor: pointer;
+  transition: 0.3s;
+  border-radius:0;
+  float:left;
+}
+button.save:hover{
+  background-color: #BC8200;
+}
+
+
+.container-priv {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 15px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  text-align: left !important;
+}
+
+/* Hide the browser's default checkbox */
+.container-priv input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 15px;
+  width: 15px;
+  background-color: #eee;
+}
+
+/* On mouse-over, add a grey background color */
+.container-priv:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.container-priv input:checked ~ .checkmark {
+  background-color: #BC8200;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.container-priv input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.container-priv .checkmark:after {
+  left: 5px;
+  top: 3px;
+  width:4px;
+  height: 8px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
 }
