@@ -279,8 +279,8 @@
 
                <!--Tabs-->
                <div class="nav nav-tabs messages-tabs">
-                    <button class="tab-button" onclick="changeMessagesContent(event, 'contactsTab')">Contacts</button>
-                    <button class="tab-button activeBtn"
+                    <button id="contactsTabBtn" class="tab-button" onclick="changeMessagesContent(event, 'contactsTab')">Contacts</button>
+                    <button id="inboxTabBtn" class="tab-button activeBtn"
                          onclick="changeMessagesContent(event, 'inboxTab')">Inbox</button>
                </div>
                <!--Contacts Content-->
@@ -334,9 +334,7 @@
                                    </div>
                               </div>
                               <div class="mx-auto" id="emptyDefFill">
-                                   <br />
                                    <h5>Click on +Add button to start adding contacts.</h5>
-                                   <br />
                               </div>
                               <ul class="list-group list-group-flush messagesScrollable" id="peopleList">
                                    <!--Information is dynamically added here-->
@@ -588,7 +586,15 @@
                var main = document.getElementsByTagName("main")[0].style.padding = "4em";
                if (navButtonName === "messages") {
                     $(".messages-tabs").show();
-                    document.getElementById('inboxTab').style.display = "block";
+                    if($("#inboxTabBtn").hasClass("activeBtn"))
+                    {
+                         $("#inboxTab").show();
+                         $("#contactTab").hide();
+                    }
+                    else{
+                         $("#contactTab").show();
+                         $("#inboxTab").hide();
+                    }
                }
                document.getElementById("message").style.display = "none";
 
@@ -601,6 +607,7 @@
                     messagesContent[i].style.display = "none";
                }
                document.getElementById('inboxTab').style.display = "block";
+              
           }
           /*Switches between messages content depending on the button selected.*/
           function changeMessagesContent(evt, tabName) {
@@ -707,6 +714,7 @@
               $(this).closest("li").remove();
                });
           });
+          
      </script>
      <!--JS for inbox tab of messages-->
      <script>
