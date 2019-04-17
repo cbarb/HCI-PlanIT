@@ -8,14 +8,14 @@
   margin-top:2px;
   font-weight: normal !important;
   border-bottom: .5px solid rgb(231, 231, 231);
-  
+
 }
 .settings-cont{
   text-align: left;
   margin-bottom: 2em;
 }
 .gender{
-  
+
   text-align: left;
   margin-top: 4em;
   width:100vh;
@@ -181,4 +181,11 @@ button.save:hover{
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
+}
+
+/*Makes the content of the settings tab vertically scrollable*/
+.settingsScrollable {
+     height: 440px;
+     overflow-y: auto;
+     overflow-x: hidden;
 }
