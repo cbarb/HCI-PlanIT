@@ -413,12 +413,6 @@ a.back{
     border-top: none;
 }
 
-/*As the contact list grows longer than the container, it becomes scrollable*/
-.messagesScrollable{
-    height: 285px;
-    overflow-y: auto;
-}
-
 #inboxRows a {
     cursor: pointer;
 }
