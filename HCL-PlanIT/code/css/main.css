@@ -71,6 +71,7 @@
 
 .planner-title{
     padding-top: 3px;  
+    text-align: left;
 }
 
 .planner-edit{
@@ -144,6 +145,10 @@
 }
 .card-body{
     padding: 10px, 0px, 10px, 0px;
+}
+.card-header{
+    margin:0;
+    text-align:left;
 }
 
 
