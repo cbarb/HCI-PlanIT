@@ -184,8 +184,9 @@ button.save:hover{
 }
 
 /*Makes the content of the settings tab vertically scrollable*/
-.settingsScrollable {
-     height: 440px;
+/* .settingsScrollable {
+     height: 80vh;
      overflow-y: auto;
      overflow-x: hidden;
-}
+     width: 100% !important;
+} */
