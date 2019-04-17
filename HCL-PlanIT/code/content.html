@@ -439,7 +439,7 @@
                                                   </div>
                                                   <div class="form-group">
                                                        <div style="float:left">Message:</div>
-                                                       <textarea class="form-control" rows="5" id="firstMsg"></textarea>
+                                                       <textarea class="form-control" rows="5"></textarea>
                                                   </div>
                                                   <div class="col-md-12 text-center">
                                                        <button type="submit" class="btn btn-primary"
@@ -464,13 +464,13 @@
                          <a onclick="changeTabContent(event,'messages')" class="back mb-4">&laquo; Back</a>
                          <div class="card chat-box d-flex" style=" background-color: whitesmoke;">
                               <div class="card-header" style="background-color: #002350">
-                                   <h5 style="color: white">Contact <span class="dot"></span></h5>
+                                   <h5 style="color: white" id="contactHeader">Contact <span class="dot"></span></h5>
                               </div>
                               <div class="mt-auto p-3">
                                    <ul class="pl-0 scroll" id="messageList">
-                                        <li class="list-group-item msg-bubble">
-                                             <h6 style="color:#002350"><b>Contact</b></h6>
-                                             <p>How is your semester going?</p>
+                                        <li class="list-group-item msg-bubble" id="firstMsg">
+                                             <h6 style="color:#002350" id="contactBubble"><b>Contact</b></h6>
+                                             <p id="contactText">How is your semester going?</p>
                                         </li>
                                    </ul>
                                    <div class="input-group mb-3 ">
@@ -602,7 +602,6 @@
                     messagesContent[i].style.display = "none";
                }
                document.getElementById('inboxTab').style.display = "block";
-               document.getElementById('calendarBtn').focus();
           }
           /*Switches between messages content depending on the button selected.*/
           function changeMessagesContent(evt, tabName) {
@@ -617,7 +616,7 @@
                evt.currentTarget.className += " activeBtn";
           }
 
-          
+
           //change active for nav bar
           $(".nav-button").click(function () {
                $("nav ul li a .icon").removeClass("activeIcon");
@@ -706,7 +705,7 @@
                var formContent = document.getElementById("messageForm");
                var inboxRows = document.getElementById('inboxRows');
                var entry = document.createElement('a');
-               entry.className = "list-group-item list-group-item-action dropdown";
+               entry.className = "list-group-item list-group-item-action newRow";
                //get information from the form
                var contact = formContent.elements[0].value;
                var tag = formContent.elements[1].value.toUpperCase();
@@ -727,7 +726,6 @@
                      </div>';
                var modal = document.getElementById("composeMsg");
                $('#composeMsg').modal('hide');
-               e.preventDefault();
           });
           //https://stackoverflow.com/questions/8888491/how-do-you-display-javascript-datetime-in-12-hour-am-pm-format
           function formatAMPM(date) {
@@ -742,8 +740,15 @@
           }
 
           //click on inbox row shows message box
-          var inboxRows = document.getElementById('inboxRows');
-          inboxRows.addEventListener("click", function (e) {
+          $("#inboxRows").on("click", "a", function () {
+               var text = $(this).find(".col-9 h5").text();
+               var tag = $(this).find(".col-9 h5 span").text();
+               var description = $(this).find(".col-9 p").text();
+     
+               //get name of contact and desription
+               var name = text.replace(tag, "");
+               description = description.replace(name + ": ", "");
+
                var i, messagesContent;
                messagesContent = document.getElementsByClassName("messages-content");
                for (i = 0; i < messagesContent.length; i++) {
@@ -752,52 +757,75 @@
                document.getElementsByClassName("messages-tabs")[0].style.display = "none";
                document.getElementById('message').style.display = "block";
                document.getElementsByTagName("main")[0].style.padding = "0";
+               //reset first message styling
+               document.getElementById("contactHeader").innerHTML = name + '<span class="dot"></span>';
+               document.getElementById("firstMsg").innerHTML = '<h6 style="color:#002350" id="contactBubble"><b>Contact</b></h6>\
+                                             <p id="contactText">How is your semester going?</p>';
+               $("#firstMsg").removeClass("mt-3 ml-auto text-right");
+
+               //set name in message box
+               if ($(this).hasClass("newRow")) {
+                    console.log("in if")
+                    description = description.replace("You: ","");
+                    document.getElementById("firstMsg").innerHTML = '<h6 style="color:#ECAD36" id="contactBubble"><b>You</b></h6>\
+                                            <p id="contactText">' + description + '</p>';
+                    $("#firstMsg").addClass("mt-3 ml-auto text-right");
+               }
+               else {
+                    document.getElementById("contactBubble").innerHTML = '<b>' + name + '</b>';
+                    document.getElementById("contactText").innerHTML = description;
+               }
+
+               $(".newMsg").remove();
 
           });
+
 
 
      </script>
      <!--Script for individual message box-->
      <script>
 
+
+
           //auto scroll to bottom of messages
           var list = document.getElementById("messageList");
           list.scrollTop = list.scrollHeight;
-  
+
           function updateScroll() {
-              var list = document.getElementById("messageList");
-              list.scrollTop = list.scrollHeight;
+               var list = document.getElementById("messageList");
+               list.scrollTop = list.scrollHeight;
           }
-  
+
           var sendBtn = document.getElementById("sendBtn");
           var input = document.getElementById("msgtext");
-  
-  
+
+
           sendBtn.addEventListener("click", sendMsg);
           input.addEventListener("keydown", function (e) {
-              //pressed enter
-              if (e.keyCode === 13) {
-                  sendMsg();
-              }
+               //pressed enter
+               if (e.keyCode === 13) {
+                    sendMsg();
+               }
           });
-  
+
           //function to send a new msg
           function sendMsg(e) {
-              var list = document.getElementById("messageList");
-              var msg = document.getElementById('msgtext').value;
-              var entry = document.createElement('li');
-              entry.className = "list-group-item msg-bubble mt-3 ml-auto text-right";
-  
-              list.appendChild(entry);
-              entry.innerHTML =
-                  '<h6 style="color:#ECAD36"><b>You</b></h6> \
+               var list = document.getElementById("messageList");
+               var msg = document.getElementById('msgtext').value;
+               var entry = document.createElement('li');
+               entry.className = "list-group-item msg-bubble mt-3 ml-auto text-right newMsg";
+
+               list.appendChild(entry);
+               entry.innerHTML =
+                    '<h6 style="color:#ECAD36"><b>You</b></h6> \
                        <p>' + msg + '</p>';
-  
-              updateScroll();
-              input.value = "";
+
+               updateScroll();
+               input.value = "";
           }
-  
-      </script>
+
+     </script>
 
      <!--<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
          integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
