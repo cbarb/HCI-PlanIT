@@ -77,6 +77,10 @@
 .planner-edit{
     padding-top: 20px;
 }
+.planner-edit-header{
+    margin:0;
+    text-align: left;
+}
 
 .planner-form-input{
     font-size: 14px;
@@ -146,7 +150,7 @@
 .card-body{
     padding: 10px, 0px, 10px, 0px;
 }
-.card-header{
+.card-header h5{
     margin:0;
     text-align:left;
 }
