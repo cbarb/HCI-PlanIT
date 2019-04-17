@@ -10,8 +10,8 @@ body {
     height: 100vh;
     background-color: #002350 !important;
     background-repeat: no-repeat;
-    background-attachment: fixed;  
-    
+    background-attachment: fixed;
+
 }
 
 aside {
@@ -23,9 +23,9 @@ aside {
 
 
 img {
-    
+
     cursor: pointer;
-    
+
 }
 
 figure {
@@ -59,7 +59,7 @@ nav ul li a {
 main {
     background: #fff;
     padding: 1em 1.4em;
-    
+
 }
 
 
@@ -71,7 +71,7 @@ main {
     body {
         display: grid;
         grid-template-columns: 10% auto;
-        padding: 2em;
+        padding: 0 2em 0 2em;
     }
 
 
@@ -80,7 +80,7 @@ main {
         grid-template-columns: auto;
         grid-template-rows: 28% auto;
         padding: 0;
-        
+
     }
 
     main {
@@ -94,7 +94,7 @@ main {
         margin-left: auto;
         margin-right: auto;
         margin-bottom: 10px;
-        width: 35%;
+        width: 75px;
     }
 
     nav ul {
@@ -114,27 +114,28 @@ main {
 
     nav {
         background: none;
+        position: fixed;
     }
 
-    
+
 
     nav ul li a{
-        text-decoration: none;    
-        text-align: center; 
+        text-decoration: none;
+        text-align: center;
         display: block;
         transition: 0.3s;
    }
    nav ul li a .icon{
         width: 50px;
         height: 50px;
-        padding: 0;    
+        padding: 0;
         font-size: 50px;
         color: #002350;
         display: inline-block;
         text-align: center;
         transition: 0.3s;
    }
-   
+
    nav ul li a .name{
         font-size: 12px;
         text-align: center;
@@ -143,7 +144,7 @@ main {
         font-weight: bold;
         transform: translateY(5px);
         display: absolute !important;
-   
+
    }
    /* nav ul li a:hover {
         background: #002350;
@@ -153,19 +154,19 @@ main {
    }
    nav ul li a:hover .name, aside nav ul li .activeName{
         color: #BC8200;
-        
+
    }
    .app-content{
        float: left;
        margin: 1.5em;
    }
-    
+
 }
 
 /* Message chat */
 .chat-box{
-    width:90% ; 
-    height:80vh; 
+    width:90% ;
+    height:80vh;
 }
 
 .scroll{
@@ -238,9 +239,10 @@ a.back{
     border-top: none;
 }
 
+/*As the contact list grows longer than the container, it becomes scrollable*/
 .messagesScrollable{
-    height: 350px;
-    overflow-y: scroll;
+    height: 285px;
+    overflow-y: auto;
 }
 
 #inboxRows a {

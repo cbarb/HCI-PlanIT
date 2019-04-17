@@ -310,12 +310,12 @@
                                                   <div class="modal-body">
                                                        <form id="contactForm">
                                                             <div class="form-group">
-                                                                 Name:
+                                                                      <div style="float:left">Name:</div>
                                                                  <input type="text" class="form-control"
                                                                       name="personName" id="addName">
                                                             </div>
                                                             <div class="form-group">
-                                                                 Phone:
+                                                                      <div style="float:left">Phone:</div>
                                                                  <input type="text" class="form-control"
                                                                       name="personPhone" id="addPhone">
                                                             </div>
@@ -488,71 +488,70 @@
 
           </div>
           <div id="settings" class="app-content">
-               <h1 class="settings-cont">Settings</h1><br>
-               <img class="prof-pic" src="images/face.jpg" alt=""><br>
+               <div class="settingsScrollable">
+                    <h1 class = "settings-cont">Settings</h1><br>
 
-               <div class="personal-info">
+                    <img class="prof-pic" src="images/face.jpg" alt=""><br>
 
-                    <p class="name-settings">Name: <span contenteditable="true" class="input-settings"> Jane </span></p>
-                    <p class="name-settings">Last Name: <span contenteditable="true" class="input-settings"> Doe </span>
-                    </p>
-                    <p class="name-settings">e-Mail: <span contenteditable="true" class="input-settings">
-                              jadoe001@fiu.edu </span></p>
-                    <p class="name-settings">Panther ID: <span contenteditable="true" class="input-settings"> 1533350
-                         </span></p>
-                    <p class="name-settings">Phone Number: <span contenteditable="true" class="input-settings">
-                              786-555-4545 </span></p>
+                    <div class="personal-info">
 
+                         <p class="name-settings">Name: <span contenteditable="true" class="input-settings"> Jane </span></p>
+                         <p class="name-settings">Last Name: <span contenteditable="true" class="input-settings"> Doe </span></p>
+                         <p class="name-settings">e-Mail: <span contenteditable="true" class="input-settings"> jadoe001@fiu.edu </span></p>
+                         <p class="name-settings">Panther ID: <span contenteditable="true" class="input-settings"> 1533350 </span></p>
+                         <p class="name-settings">Phone Number: <span contenteditable="true" class="input-settings"> 786-555-4545 </span></p>
+
+                    </div>
+                    <div class="gender">
+                              <p class="header-gender">Gender</p>
+                              <form action="#">
+                                   <p>
+                                     <input type="radio" id="test1" name="radio-group" checked>
+                                     <label for="test1">Female</label>
+                                   </p>
+                                   <p>
+                                     <input type="radio" id="test2" name="radio-group">
+                                     <label for="test2">Male</label>
+                                   </p>
+                                   <p>
+                                     <input type="radio" id="test3" name="radio-group">
+                                     <label for="test3">Other</label>
+                                   </p>
+                              </form>
+
+                    </div>
+                    <div class = "gender">
+                         <p class="header-gender">Privacy </p>
+                         <label class="container-priv">Make Phone Number visible to classmates
+                              <input type="checkbox" checked="checked">
+                              <span class="checkmark"></span>
+                         </label>
+
+                         <label class="container-priv">Make e-Mail visible to classmates
+                              <input type="checkbox" checked="checked">
+                              <span class="checkmark"></span>
+                         </label>
+                    </div>
+
+                    <div class = "gender">
+                         <p class="header-gender">Notifications </p>
+                         <label class="container-priv">Allow notifications from classmates
+                              <input type="checkbox" checked="checked">
+                              <span class="checkmark"></span>
+                         </label>
+
+                         <label class="container-priv">Allow notifications from Professors
+                              <input type="checkbox" checked="checked">
+                              <span class="checkmark"></span>
+                         </label>
+                         <label class="container-priv">Allow daily report
+                              <input type="checkbox">
+                              <span class="checkmark"></span>
+                         </label>
+                    </div>
+
+                    <button class="save">Save Settings</button>
                </div>
-               <div class="gender">
-                    <p class="header-gender">Gender</p>
-                    <form action="#">
-                         <p>
-                              <input type="radio" id="test1" name="radio-group" checked>
-                              <label for="test1">Female</label>
-                         </p>
-                         <p>
-                              <input type="radio" id="test2" name="radio-group">
-                              <label for="test2">Male</label>
-                         </p>
-                         <p>
-                              <input type="radio" id="test3" name="radio-group">
-                              <label for="test3">Other</label>
-                         </p>
-                    </form>
-
-               </div>
-               <div class="gender">
-                    <p class="header-gender">Privacy </p>
-                    <label class="container-priv">Make Phone Number visible to classmates
-                         <input type="checkbox" checked="checked">
-                         <span class="checkmark"></span>
-                    </label>
-
-                    <label class="container-priv">Make e-Mail visible to classmates
-                         <input type="checkbox" checked="checked">
-                         <span class="checkmark"></span>
-                    </label>
-               </div>
-
-               <div class="gender">
-                    <p class="header-gender">Notifications </p>
-                    <label class="container-priv">Allow notifications from classmates
-                         <input type="checkbox" checked="checked">
-                         <span class="checkmark"></span>
-                    </label>
-
-                    <label class="container-priv">Allow notifications from Professors
-                         <input type="checkbox" checked="checked">
-                         <span class="checkmark"></span>
-                    </label>
-                    <label class="container-priv">Allow daily report
-                         <input type="checkbox">
-                         <span class="checkmark"></span>
-                    </label>
-               </div>
-
-               <button class="save">Save Settings</button>
           </div>
 
      </main>
@@ -627,73 +626,85 @@
      </script>
      <!--JS for adding a contact to the contact list in messages>-->
      <script>
-          class ContactList {
-               constructor(numOfContacts, contactList) {
-                    this.numOfContacts = numOfContacts;
-                    this.contactList = contactList;
-               }
-               /*Push name and phone number to contactList array*/
-               addToContacts(name, phone) {
-                    this.numOfContacts += 1;
-                    var tempArr = [];
-                    tempArr.push(name);
-                    tempArr.push(phone);
-                    this.contactList.push(tempArr);
-               }
-               /*Shorthand to get contact array length*/
-               get length() {
-                    return this.contactList.length;
-               }
-               /*Sort array by first column of the array.*/
-               sortByName() {
-                    this.contactList.sort(sortFunc);
-               }
-               /*Auxilary func to sort 2d array*/
-               sortFunc(a, b) {
-                    if (a[0] === b[0]) {
-                         return 0;
-                    }
-                    else {
-                         return (a[0] < b[0]) ? -1 : 1;
-                    }
-               }
-          }
-          const contacts = new ContactList(0, []);
-          /*Event listener for adding to the contact list*/
-          addButton.addEventListener("click", function (e) {
-               var formContent = document.getElementById("contactForm");
-               var personList = document.getElementById('peopleList');
-               var list = personList.getElementsByTagName('li');
-               var entry = document.createElement('li');
-               entry.className = "list-group-item list-group-item-action personContact dropdown";
-               var name = document.createTextNode(formContent.elements[0].value);
-               contacts.addToContacts(formContent.elements[0].value, formContent.elements[1].value);
-               var personName = document.getElementById('addName').value;
-               personName = personName.charAt(0).toUpperCase() + personName.substring(1).toLowerCase();
-               var i = 0;
-               var currVal = list[0];
-               entry.appendChild(document.createTextNode(personName));
-               while (currVal && currVal.innerHTML < personName)
-                    currVal = list[++i];
-               if (currVal)
-                    personList.insertBefore(entry, currVal);
-               else
-                    personList.appendChild(entry);
-               if (contacts.length > 0) {
-                    var defaultFill = document.getElementById('emptyDefFill');
-                    defaultFill.style.display = 'none';
-               }
-               entry.innerHTML =
-                    personName + "<div class=\"text-right\"><button type=\"button\" class=\"btn btn-sm btn-primary delButton\" id=\"#delContact\"> - </button><\div>"
-               e.preventDefault();
-          });
-          /*Event listener for deleting a contact from the list using the "-"
-            button*/
-          /*TODO:Delete corresponding information from array*/
-          $(document).ready(function () {
-               $(document).on('click', '.delButton', function () {
-                    console.log('delete');
-                    $(this).closest("li").remove();
+         class ContactList {
+            constructor (numOfContacts, contactList){
+               this.numOfContacts = numOfContacts;
+               this.contactList = contactList;
+            }
+            /*Push name and phone number to contactList array*/
+            addToContacts(name, phone){
+              this.numOfContacts += 1;
+              var tempArr = [];
+              tempArr.push(name);
+              tempArr.push(phone);
+              this.contactList.push(tempArr);
+            }
+            /*Shorthand to get contact array length*/
+            get length() {
+              return this.contactList.length;
+            }
+            /*Sort array by first column of the array.*/
+            sortByName() {
+               this.contactList.sort(sortFunc);
+            }
+            /*Auxilary func to sort 2d array*/
+            sortFunc(a, b) {
+              if (a[0] === b[0]) {
+                  return 0;
+              }
+              else {
+                  return (a[0] < b[0]) ? -1 : 1;
+              }
+            }
+         }
+         const contacts = new ContactList(0, []);
+         /*Event listener for adding to the contact list*/
+         addButton.addEventListener("click", function(e) {
+             var formContent = document.getElementById("contactForm");
+             var personList = document.getElementById('peopleList');
+             var list = personList.getElementsByTagName('li');
+             var entry = document.createElement('li');
+             entry.className = "list-group-item list-group-item-action personContact dropdown text-left";
+             var name = document.createTextNode(formContent.elements[0].value);
+             contacts.addToContacts(formContent.elements[0].value, formContent.elements[1].value);
+             var personName = document.getElementById('addName').value;
+             personName = personName.charAt(0).toUpperCase() + personName.substring(1).toLowerCase();
+             var i= 0;
+             var currVal = list[0];
+             entry.appendChild(document.createTextNode(personName));
+             while(currVal && currVal.innerHTML<personName)
+                  currVal= list[++i];
+             if (currVal)
+                  personList.insertBefore(entry, currVal);
+             else
+                  personList.appendChild(entry);
+             if (contacts.length > 0){
+                 var defaultFill = document.getElementById('emptyDefFill');
+                 defaultFill.style.display = 'none';
+             }
+             var personContact = document.getElementById('addPhone').value;
+             console.log(personContact);
+             var buttonsString =
+                 "<div class=\"dropdown text-right\">" +
+                      "<button type=\"button\" class=\"btn btn-sm btn-secondary dropdown-toggle\" id=\"sendMessageDropDown\"" +
+                           " data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\"> Actions </button>" +
+                      "<div class=\"dropdown-menu\" aria-labelledby=\"sendMessageDropDown\">" +
+                           "<a class=\"dropdown-item\" href=\"#\">Compose</a>" +
+                           "<a class=\"dropdown-item\" href=\"#\">Add to group</a>" +
+                           "<a class=\"dropdown-item\" data-toggle=\"tooltip\" data-trigger=\"hover\" title=\"Phone Number:\n\n" + personContact + "\" href=\"#\">View Number</a>" +
+                      "</div>" +
+                 "<button type=\"button\" style=\"background-color:#002350; border-style:none; margin-left:10px;\" class=\"btn btn-sm btn-primary delButton\" id=\"#delContact\"> - </button>" +
+                 "</div>";
+             entry.innerHTML += buttonsString;
+             e.preventDefault();
+         });
+         /*Event listener for deleting a contact from the list using the "-"
+           button*/
+         /*TODO:Delete corresponding information from array*/
+         $(document).ready(function () {
+               $(document).on('click','.delButton', function () {
+              console.log('delete');
+              $(this).closest("li").remove();
                });
           });
      </script>
