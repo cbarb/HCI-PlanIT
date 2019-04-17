@@ -1,6 +1,155 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,700');
 @import 'http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css';
 
+/* PLANNER RELATED STYLES */
+#planner {
+    width: 100%;
+    height: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#planner .list-group-item {
+    border: 0;
+}
+
+#planner .list-group-item:last-child {
+    border: 0;
+}
+
+.dateHead{
+    border-bottom: 2px solid grey;
+    padding: 5px;
+}
+.dateHead p{
+    margin: 0px;
+    font-size: 14px;
+    font-weight: bold;
+}
+.view-in{
+    font-size: 14px;
+}
+
+
+
+.planner-event{
+    height: 40px;
+    padding-top: 7px;
+    margin:0;
+}
+.planner-event p{
+    margin: 0;
+    font-size: 14px;
+}
+
+.planner-time{
+    height: 30px;
+    width: 40px;
+}
+.all-day{
+    padding-top: 8px;  
+    padding-bottom: 8px;
+}
+.planner-time p{
+    font-size: 9px;
+    text-align: right;
+}
+.planner-btn-submit{
+    width: 45;
+    font-size: 14px;
+    margin-left: 30px;
+    padding: 5px;
+}
+
+
+.planner-tag{
+    height: 20px;
+    width: 100px;
+    padding-top: 3px;  
+    padding-bottom: 3px; 
+    font-size: 14px;
+}
+
+.planner-title{
+    padding-top: 3px;  
+}
+
+.planner-edit{
+    padding-top: 20px;
+}
+
+.planner-form-input{
+    font-size: 14px;
+    color: black;
+
+    border: 1px solid white;
+    margin-right: 1px;
+}
+.planner-form-dropdown{
+    font-size: 14px;
+    color: black;
+
+    border: 1px solid white;
+    margin-right: 1px;
+
+    padding: 0px;
+    padding-top:2px;
+    padding-left: 12px;
+}
+.no-padding{
+    padding:0;
+}
+
+.datepicker-days{
+    font-size: 11px;
+}
+.ui-timepicker-wrapper{
+    font-size: 14px;
+}
+
+.planner-form-checkbox{
+    background-color: white;
+    border: 1px solid white;
+
+    padding-top: 12px;
+    padding-bottom: 0px;
+}
+.planner-form-input:hover{
+    border: 1px solid #ced4da;
+}
+
+.input-group-prepend{
+    text-align: right;
+}
+.planner-form-label{
+    width: 80px;
+    padding-top: 10px;
+    padding-left: 30px;
+    padding-right: 5px;
+    padding-bottom: 0px;
+
+    font-size: 11px;
+    text-align: right;
+    display: block;
+
+    border: none;
+    background-color: white;
+}
+.form-group{
+    margin: 0px;
+    margin-bottom: 5px;
+}
+.input-group{
+    margin: 0px;
+    margin-bottom: 5px;
+}
+.card-body{
+    padding: 10px, 0px, 10px, 0px;
+}
+
+
+
+
+
 body{
     margin: 0;
     font-family: 'Montserrat';
